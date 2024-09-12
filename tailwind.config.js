@@ -19,6 +19,8 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: 'var(--font-heading-family)',
+        worksans: '"Work Sans", sans-serif',
+        'league-spartan': '"League Spartan", sans-serif',
       },
     },
   },
