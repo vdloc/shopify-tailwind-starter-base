@@ -43,10 +43,8 @@
       <script src='{{ 'animations.js' | asset_url }}' defer='defer'></script>
     {%- endif -%}
 
-    {%- liquid
-      render 'vite-tag' with 'main.css'
-      render 'vite-tag' with 'main.js'
-    -%}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+
     {{ content_for_header }}
 
     {%- liquid
@@ -263,8 +261,11 @@
       }
     {% endstyle %}
 
-    {{ 'app.css' | asset_url | stylesheet_tag }}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {%- liquid
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.js'
+    -%}
+
     <link rel='stylesheet' href='{{ 'component-cart-items.css' | asset_url }}' media='print' onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
