@@ -306,6 +306,24 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    <style>
+      @font-face {
+        font-family: 'Work Sans';
+        src: url('{{ "WorkSans-VariableFont_wght.ttf" | asset_url }}')
+          format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'League Spartan';
+        src: url('{{ "LeagueSpartan-VariableFont_wght.ttf" | asset_url }}')
+          format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+    </style>
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>

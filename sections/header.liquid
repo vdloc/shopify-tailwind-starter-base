@@ -11,23 +11,7 @@
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<style>
-  @font-face {
-    font-family: 'Work Sans';
-    src: url('{{ "WorkSans-VariableFont_wght.ttf" | asset_url }}')
-      format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-  }
 
-  @font-face {
-    font-family: 'League Spartan';
-    src: url('{{ "LeagueSpartan-VariableFont_wght.ttf" | asset_url }}')
-      format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-  }
-</style>
 
 <style>
   header-drawer {
@@ -240,7 +224,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           {%- if section.settings.enable_customer_avatar -%}
-            <account-icon>
+            <account-icon class="tw-text-white">
               {%- if customer and customer.has_avatar? -%}
                 {{ customer | avatar }}
               {%- else -%}
