@@ -11,12 +11,16 @@
 <details-modal class='header__search'>
   <details>
     <summary
-      class='header__icon header__icon--search header__icon--summary link focus-inset modal__toggle'
+      class='header__icon header__icon--search header__icon--summary link focus-inset modal__toggle tw-group'
       aria-haspopup='dialog'
       aria-label='{{ 'general.search.search' | t }}'
     >
       <span>
-        <svg class='modal__toggle-open icon icon-search tw-stroke-white' aria-hidden='true' focusable='false'>
+        <svg
+          class='modal__toggle-open icon icon-search tw-stroke-white group-hover:tw-transform-none'
+          aria-hidden='true'
+          focusable='false'
+        >
           <use href="#icon-search">
         </svg>
         <svg class='modal__toggle-close icon icon-close tw-stroke-white' aria-hidden='true' focusable='false'>

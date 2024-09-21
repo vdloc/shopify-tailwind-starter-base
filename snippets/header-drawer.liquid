@@ -5,10 +5,10 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
-<header-drawer data-breakpoint='desktop'>
+<header-drawer data-breakpoint='desktop' class='tw-flex tw-items-center'>
   <details id='Details-menu-drawer-container' class='menu-drawer-container'>
     <summary
-      class='header__icon header__icon--menu header__icon--summary link focus-inset'
+      class='header__icon header__icon--menu header__icon--summary link focus-inset tw-group'
       aria-label='{{ 'sections.header.menu' | t }}'
     >
       <span class='tw-text-white'>
@@ -16,6 +16,7 @@
         {% render 'icon-close' %}
       </span>
     </summary>
+
     <div id='menu-drawer' class='gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}'>
       <div class='menu-drawer__inner-container'>
         <div class='menu-drawer__navigation-container'>
@@ -257,4 +258,5 @@
       </div>
     </div>
   </details>
+  <div class='lg:tw-hidden'>{% render 'header-search', input_id: 'header-search-mobile' %}</div>
 </header-drawer>
