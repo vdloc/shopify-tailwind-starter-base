@@ -1,210 +1,117 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero-section": {
+      "type": "hero-section",
+      "settings": {
+        "heading": "WILLKOMMEN BEI SHARPED MESSER",
+        "subheading": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
+      },
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide-1": {
+          "type": "image",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "assets/dao1@0.5x 1.jpg"
           }
         },
-        "text": {
-          "type": "text",
+        "slide-2": {
+          "type": "image",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "image": "assets/dao1@0.5x 1.jpg"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide-3": {
+          "type": "image",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "assets/dao1@0.5x 1.jpg"
           }
         }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "tabs-section": {
+      "type": "tabs-section",
+      "settings": {}
+    },
+    "product-carousel-section": {
+      "type": "product-carousel-section",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "show_view_all": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
+        "product-1": {
           "type": "product",
           "settings": {
-            "product": "",
-            "second_image": false
+            "image": "path/to/image1.jpg",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 €",
+            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "product-2": {
+          "type": "product",
           "settings": {
-            "collection": ""
+            "image": "path/to/image2.jpg",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "image": "path/to/image3.jpg",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 €",
+            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
           }
         }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
+    "about-section": {
+      "type": "about-section",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "path/to/about-image.jpg",
+        "title": "Ein Blick hinter Sharped Messer",
+        "content": "Seit der Gründung von Sharped Messer im Jahr 2012 erhalten wir Leidenschaft, die inspirative Vision und die handwerkliche Meisterschaft unserer Firmengründer Robert und Lars aufrecht. Als Familienunternehmen in zweiter Generation..."
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "additional-product-carousel-section": {
+      "type": "product-carousel-section",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "product-4": {
+          "type": "product",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "path/to/another-product-image.jpg",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 €",
+            "product_description": "Zum Messer"
           }
         }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+      }
+    },
+    "manual-work-section": {
+      "type": "manual-work-section",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "path/to/manual-work-image.jpg",
+        "title": "Manuelle Arbeit aus Vietnam",
+        "content": "Materialverwendung: Der Schliff... (more detailed content)"
+      }
+    },
+    "testimonials-section": {
+      "type": "testimonials-section",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "It's the business end of the chef's knife, the blade and the handle, the weight and balance, the feel in the hand and the look of the blade."
+          }
+        }
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero-section",
+    "tabs-section",
+    "product-carousel-section",
+    "about-section",
+    "additional-product-carousel-section",
+    "manual-work-section",
+    "testimonials-section"
   ]
 }
