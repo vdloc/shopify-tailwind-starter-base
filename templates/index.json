@@ -8,110 +8,45 @@
       },
       "blocks": {
         "slide-1": {
-          "type": "image",
+          "type": "hero-section-item",
           "settings": {
-            "image": "assets/dao1@0.5x 1.jpg"
+            "link": "/",
+            "text": "umweltfreundlicher, handgefertigter Messer aus Carbon Stahl"
           }
         },
         "slide-2": {
-          "type": "image",
+          "type": "hero-section-item",
           "settings": {
-            "image": "assets/dao1@0.5x 1.jpg"
+            "link": "/",
+            "text": "Nachhaltige, handgefertigte Messer aus Kohlenstoffstahl"
           }
         },
         "slide-3": {
-          "type": "image",
+          "type": "hero-section-item",
           "settings": {
-            "image": "assets/dao1@0.5x 1.jpg"
-          }
-        }
-      }
-    },
-    "tabs-section": {
-      "type": "tabs-section",
-      "settings": {}
-    },
-    "product-carousel-section": {
-      "type": "product-carousel-section",
-      "blocks": {
-        "product-1": {
-          "type": "product",
-          "settings": {
-            "image": "path/to/image1.jpg",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 €",
-            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
+            "link": "/",
+            "text": "Umweltbewusste, handgemachte Messer aus Karbonstahl"
           }
         },
-        "product-2": {
-          "type": "product",
+        "slide-4": {
+          "type": "hero-section-item",
           "settings": {
-            "image": "path/to/image2.jpg",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
-          }
-        },
-        "product-3": {
-          "type": "product",
-          "settings": {
-            "image": "path/to/image3.jpg",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 €",
-            "product_description": "Messertasche Schwarzes Leder Messertasche Schwarzes Leder"
+            "link": "/",
+            "text": "Umweltverträgliche, handgearbeitete Messer aus Kohlenstoffstahl"
           }
         }
-      }
+      },
+      "block_order": [
+        "slide-0",
+        "slide-1",
+        "slide-2"
+      ],
+    
     },
-    "about-section": {
-      "type": "about-section",
-      "settings": {
-        "image": "path/to/about-image.jpg",
-        "title": "Ein Blick hinter Sharped Messer",
-        "content": "Seit der Gründung von Sharped Messer im Jahr 2012 erhalten wir Leidenschaft, die inspirative Vision und die handwerkliche Meisterschaft unserer Firmengründer Robert und Lars aufrecht. Als Familienunternehmen in zweiter Generation..."
-      }
-    },
-    "additional-product-carousel-section": {
-      "type": "product-carousel-section",
-      "blocks": {
-        "product-4": {
-          "type": "product",
-          "settings": {
-            "image": "path/to/another-product-image.jpg",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 €",
-            "product_description": "Zum Messer"
-          }
-        }
-      }
-    },
-    "manual-work-section": {
-      "type": "manual-work-section",
-      "settings": {
-        "image": "path/to/manual-work-image.jpg",
-        "title": "Manuelle Arbeit aus Vietnam",
-        "content": "Materialverwendung: Der Schliff... (more detailed content)"
-      }
-    },
-    "testimonials-section": {
-      "type": "testimonials-section",
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "content": "It's the business end of the chef's knife, the blade and the handle, the weight and balance, the feel in the hand and the look of the blade."
-          }
-        }
-      }
-    }
+    
   },
   "order": [
     "hero-section",
-    "tabs-section",
-    "product-carousel-section",
-    "about-section",
-    "additional-product-carousel-section",
-    "manual-work-section",
-    "testimonials-section"
+
   ]
 }

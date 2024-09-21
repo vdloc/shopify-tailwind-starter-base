@@ -32,14 +32,19 @@
 }
 {% endschema %}
 
-<div class="product-carousel-section">
-  <div class="products">
+<div class='product-carousel-section'>
+  <div class='products'>
     {% for block in section.blocks %}
-      <div class="product-item">
-        <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.product_name }}">
-        <div class="product-details">
+      <div class='product-item'>
+        <img
+          src='{{ block.settings.image | image_url: 'medium' }}'
+          alt='{{ block.settings.product_name }}'
+          width='500'
+          height='600'
+        >
+        <div class='product-details'>
           <h3>{{ block.settings.product_name }}</h3>
-          <p class="price">{{ block.settings.product_price }}</p>
+          <p class='price'>{{ block.settings.product_price }}</p>
           <p>{{ block.settings.product_description }}</p>
         </div>
       </div>

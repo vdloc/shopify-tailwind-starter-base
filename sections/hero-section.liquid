@@ -1,12 +1,12 @@
 {% schema %}
 {
-  "name": "Hero Section",
+  "name": "Hero Section Slider",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "WILLKOMMEN BEI SHARPED MESSERERRR"
+      "default": "WILLKOMMEN BEI SHARPED MESSER"
     },
     {
       "type": "text",
@@ -17,77 +17,137 @@
   ],
   "blocks": [
     {
-      "type": "image",
+      "type": "hero-section-item",
       "name": "Slide",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
           "label": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alternative Text",
+          "default": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "default": "80,- €"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Slide Text",
+          "default": "Slide Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Zum Messer"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Hero Section",
+      "name": "Hero Section Slider",
       "category": "Custom"
     }
   ]
 }
 {% endschema %}
 
-<div class='hero-section'>
-  <h1>{{ section.settings.heading }}</h1>
-  <p>{{ section.settings.subheading }}</p>
 
-  <div class='hero-slider'>
-    {% for block in section.blocks %}
-      <div class='slide'>
-        <img src='{{ block.settings.image | img_url: 'large' }}' alt='Slide Image' width='500' height='600'>
+
+<div class='hero-section'>
+  <slideshow-component
+    class=''
+    role='region'
+    aria-roledescription='carousel'
+    aria-label='Hero Section Slider'
+  >
+    <div class='slider-buttons'>
+      <button
+        type='button'
+        class='slider-button slider-button--prev tw-rotate-180'
+        name='previous'
+        aria-controls='Slider-{{ section.id }}'
+      >
+        {% render 'icon-caret' %}
+      </button>
+      <div
+        class='grid grid--1-col slider slider--everywhere'
+        id='Slider-{{ section.id }}'
+        aria-live='polite'
+        aria-atomic='true'
+        data-autoplay='{{ section.settings.auto_rotate }}'
+        data-speed='{{ section.settings.change_slides_speed }}'
+      >
+        {%- for block in section.blocks -%}
+          <div
+            class='slideshow__slide slider__slide grid__item grid--1-col'
+            id='Slide-{{ section.id }}-{{ forloop.index }}'
+            role='group'
+            aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+            tabindex='-1'
+          >
+            <div
+              class=''
+              role='region'
+              aria-label='{{ 'sections.header.announcement' | t }}'
+            >
+              {%- if block.settings.text != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a
+                    href='{{ block.settings.link }}'
+                    class='announcement-bar__link link link--text focus-inset animate-arrow'
+                  >
+                {%- endif -%}
+                <p class='announcement-bar__message h5 tw-font-league-spartan tw-font-light tw-uppercase tw-flex tw-items-center tw-p-0 tw-leading-none'>
+                  <span>{{ block.settings.text | escape }}</span>
+                  {%- if block.settings.link != blank -%}
+                    {% render 'icon-arrow' %}
+                  {%- endif -%}
+                </p>
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
       </div>
-    {% endfor %}
-  </div>
+      <button
+        type='button'
+        class='slider-button slider-button--next'
+        name='next'
+        aria-label='{{ 'sections.announcements.next_announcement' | t }}'
+        aria-controls='Slider-{{ section.id }}'
+      >
+        {% render 'icon-caret' %}
+      </button>
+    </div>
+  </slideshow-component>
+  {%- if request.design_mode -%}
+    <script src='{{ 'theme-editor.js' | asset_url }}' defer='defer'></script>
+    <style>
+      /* theme editor power preview fix */
+      .announcement-bar-slider .slider__slide[aria-hidden='true'] {
+        visibility: hidden;
+      }
+    </style>
+  {%- endif -%}
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    let currentSlide = 0;
-    slides[currentSlide].style.display = 'block';
-
-    function showNextSlide() {
-      slides[currentSlide].style.display = 'none';
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].style.display = 'block';
-    }
-
-    setInterval(showNextSlide, 5000); // Change slide every 5 seconds
-  });
+  console.log({{ section.blocks.slide-2 | json }})
 </script>
-
-<style>
-  .hero-section {
-    text-align: center;
-  }
-
-  .hero-slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-  }
-
-  .hero-slider .slide {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .hero-slider .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-</style>

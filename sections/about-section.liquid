@@ -22,7 +22,14 @@
 {% endschema %}
 
 <div class='about-section'>
-  <img src='{{ section.settings.image | img_url: 'medium' }}' alt='{{ section.settings.title }}'>
+  {% for block in section.blocks %}
+    <div class='slide'>
+      <img src='{{ block.settings.image | image_url: 'large' }}' alt='Slide Image' width='500' height='600'>
+    </div>
+  {% endfor %}
   <h2>{{ section.settings.title }}</h2>
   <p>{{ section.settings.content }}</p>
 </div>
+<script>
+  console.log({{ section.settings | json }});
+</script>

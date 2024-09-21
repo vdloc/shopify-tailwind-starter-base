@@ -22,7 +22,12 @@
 {% endschema %}
 
 <div class='manual-work-section'>
-  <img src='{{ section.settings.image | img_url: 'medium' }}' alt='{{ section.settings.title }}'>
+  <img
+    src='{{ section.settings.image | image_url: 'medium' }}'
+    alt='{{ section.settings.title }}'
+    width='500'
+    height='600'
+  >
   <h2>{{ section.settings.title }}</h2>
   <p>{{ section.settings.content }}</p>
 </div>
