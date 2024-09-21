@@ -35,7 +35,8 @@
     "vite-plugin-shopify": "^3.0.1"
   },
   "dependencies": {
-    "@trelliscommerce/prettier-config": "^1.0.0"
+    "@trelliscommerce/prettier-config": "^1.0.0",
+    "embla-carousel": "^8.3.0"
   },
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {

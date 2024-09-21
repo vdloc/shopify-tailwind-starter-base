@@ -5,7 +5,7 @@
 @layer base {
   body {
     font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
+    @apply tw-font-normal;
   }
 }
 
@@ -17,5 +17,17 @@
   .header__menu-item,
   .header__active-menu-item {
     @apply tw-text-white;
+  }
+
+  .embla {
+    @apply tw-overflow-hidden;
+  }
+
+  .embla__container {
+    @apply tw-flex;
+  }
+
+  .embla__slide {
+    @apply tw-flex-grow-0 tw-flex-shrink-0 tw-w-full tw-min-w-0 tw-relative;
   }
 }
