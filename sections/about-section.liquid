@@ -1,0 +1,28 @@
+{% schema %}
+{
+  "name": "About Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "About Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content"
+    }
+  ]
+}
+{% endschema %}
+
+<div class='about-section'>
+  <img src='{{ section.settings.image | img_url: 'medium' }}' alt='{{ section.settings.title }}'>
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.content }}</p>
+</div>

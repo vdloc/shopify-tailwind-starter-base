@@ -1,0 +1,93 @@
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WILLKOMMEN BEI SHARPED MESSERERRR"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class='hero-section'>
+  <h1>{{ section.settings.heading }}</h1>
+  <p>{{ section.settings.subheading }}</p>
+
+  <div class='hero-slider'>
+    {% for block in section.blocks %}
+      <div class='slide'>
+        <img src='{{ block.settings.image | img_url: 'large' }}' alt='Slide Image' width='500' height='600'>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let currentSlide = 0;
+    slides[currentSlide].style.display = 'block';
+
+    function showNextSlide() {
+      slides[currentSlide].style.display = 'none';
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].style.display = 'block';
+    }
+
+    setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+  });
+</script>
+
+<style>
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .hero-slider .slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .hero-slider .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
