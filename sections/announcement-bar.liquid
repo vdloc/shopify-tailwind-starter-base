@@ -22,7 +22,7 @@
   class='utility-bar tw-border-b'
   {{ block.shopify_attributes }}
 >
-  <div class='page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}'>
+  <div class='tw-container utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}'>
     {%- if section.settings.show_social and social_icons -%}
       {%- render 'social-icons' -%}
     {%- endif -%}
@@ -61,7 +61,7 @@
         <div class='announcement-bar-slider slider-buttons'>
           <button
             type='button'
-            class='slider-button slider-button--prev'
+            class='slider-button slider-button--prev tw-rotate-180'
             name='previous'
             aria-label='{{ 'sections.announcements.previous_announcement' | t }}'
             aria-controls='Slider-{{ section.id }}'
@@ -99,7 +99,7 @@
                         class='announcement-bar__link link link--text focus-inset animate-arrow'
                       >
                     {%- endif -%}
-                    <p class='announcement-bar__message h5'>
+                    <p class='announcement-bar__message h5 tw-font-league-spartan tw-font-light tw-uppercase tw-flex tw-items-center tw-p-0 tw-leading-none'>
                       <span>{{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {% render 'icon-arrow' %}

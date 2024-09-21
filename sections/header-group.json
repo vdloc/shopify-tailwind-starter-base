@@ -8,15 +8,32 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Highly Limited | Pre-Sale Advent Calendar | Secure Yours Now!",
+            "link": ""
+          }
+        },
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Very Limited | Pre-Sale Advent Calendar | Get Yours Now!",
+            "link": ""
+          }
+        },
+        "announcement-bar-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Extremely Limited | Advent Calendar Pre-Sale | Secure Yours Today!",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement-bar-1",
+        "announcement-bar-2"
       ],
-      "settings": {
+      "settings": { 
+        "auto_rotate":true
       }
     },
     "header": {
