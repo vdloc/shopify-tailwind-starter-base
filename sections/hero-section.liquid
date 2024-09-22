@@ -66,88 +66,75 @@
 }
 {% endschema %}
 
-
-
-<div class='hero-section'>
-  <slideshow-component
-    class=''
-    role='region'
-    aria-roledescription='carousel'
-    aria-label='Hero Section Slider'
-  >
-    <div class='slider-buttons'>
-      <button
-        type='button'
-        class='slider-button slider-button--prev tw-rotate-180'
-        name='previous'
-        aria-controls='Slider-{{ section.id }}'
-      >
-        {% render 'icon-caret' %}
-      </button>
-      <div
-        class='grid grid--1-col slider slider--everywhere'
-        id='Slider-{{ section.id }}'
-        aria-live='polite'
-        aria-atomic='true'
-        data-autoplay='{{ section.settings.auto_rotate }}'
-        data-speed='{{ section.settings.change_slides_speed }}'
-      >
-        {%- for block in section.blocks -%}
+<section class='hero-section'>
+  <div class='embla tw-relative'>
+    <div class='embla__container'>
+      {%- for block in section.blocks -%}
+        {% if block.settings.image %}
+          {% assign image_src_large = block.settings.image | image_url: '1440x576' %}
+          {% assign image_src_medium = block.settings.image | image_url: '1024x410' %}
+          {% assign image_src_small = block.settings.image | image_url: '768x307' %}
+        {% else %}
+          {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
+          {% assign image_src_medium = 'Jonathan.jpg' | asset_url %}
+          {% assign image_src_small = 'Jonathan_mobile.jpg' | asset_url %}
+        {% endif %}
+        <div
+          class='embla__slide'
+          id='Slide-{{ section.id }}-{{ forloop.index }}'
+          role='group'
+          aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+          tabindex='-1'
+        >
           <div
-            class='slideshow__slide slider__slide grid__item grid--1-col'
-            id='Slide-{{ section.id }}-{{ forloop.index }}'
-            role='group'
-            aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
-            tabindex='-1'
+            class='tw-relative'
+            role='region'
+            aria-label='{{ block.settings.text | t }}'
           >
-            <div
-              class=''
-              role='region'
-              aria-label='{{ 'sections.header.announcement' | t }}'
-            >
+            <picture class='tw-block'>
+              <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
+              <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
+              <img src='{{ image_src_large }}' alt='{{ block.settings.alt_text }}' width='1440' height='576'>
+            </picture>
+            <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-grid tw-grid-rows-[1fr_min-content_min-content]'>
               {%- if block.settings.text != blank -%}
                 {%- if block.settings.link != blank -%}
                   <a
                     href='{{ block.settings.link }}'
-                    class='announcement-bar__link link link--text focus-inset animate-arrow'
+                    class='tw-no-underline tw-self-center'
                   >
                 {%- endif -%}
-                <p class='announcement-bar__message h5 tw-font-league-spartan tw-font-light tw-uppercase tw-flex tw-items-center tw-p-0 tw-leading-none'>
+                <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem]'>
                   <span>{{ block.settings.text | escape }}</span>
-                  {%- if block.settings.link != blank -%}
-                    {% render 'icon-arrow' %}
-                  {%- endif -%}
                 </p>
                 {%- if block.settings.link != blank -%}
                   </a>
                 {%- endif -%}
               {%- endif -%}
+              {% if block.settings.product_price != blank %}
+                <p class='tw-font-league-spartan tw-text[18px] tw-text-white tw-font-bold tw-text-center tw-self-end tw-mb-3'>
+                  {{ block.settings.product_price }}
+                </p>
+              {% endif %}
+              <a
+                href='{{block.settings.url}}'
+                class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-white tw-self-end tw-w-fit tw-justify-self-center'
+              >
+                <span class='tw-text-black tw-font-normal'>
+                  {{ block.settings.button_text }}
+                </span>
+              </a>
             </div>
           </div>
-        {%- endfor -%}
-      </div>
-      <button
-        type='button'
-        class='slider-button slider-button--next'
-        name='next'
-        aria-label='{{ 'sections.announcements.next_announcement' | t }}'
-        aria-controls='Slider-{{ section.id }}'
-      >
-        {% render 'icon-caret' %}
-      </button>
+        </div>
+      {%- endfor -%}
     </div>
-  </slideshow-component>
-  {%- if request.design_mode -%}
-    <script src='{{ 'theme-editor.js' | asset_url }}' defer='defer'></script>
-    <style>
-      /* theme editor power preview fix */
-      .announcement-bar-slider .slider__slide[aria-hidden='true'] {
-        visibility: hidden;
-      }
-    </style>
-  {%- endif -%}
-</div>
+    <div class='swipe-suggest'>
+      {% render 'icon-swipe' %}
+    </div>
+  </div>
+</section>
 
-<script>
-  console.log({{ section.blocks.slide-2 | json }})
-</script>
+{%- liquid
+  render 'vite-tag' with 'slider.js'
+-%}

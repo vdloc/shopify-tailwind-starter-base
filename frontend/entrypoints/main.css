@@ -30,4 +30,23 @@
   .embla__slide {
     @apply tw-flex-grow-0 tw-flex-shrink-0 tw-w-full tw-min-w-0 tw-relative;
   }
+
+  .shop-button {
+    clip-path: polygon(0% 0%, 81.24% 0%, 100% 100%, 0% 100%);
+  }
+
+  .swipe-suggest {
+    width: 8.125rem;
+    height: 8.25rem;
+    background-color: #52a634;
+    clip-path: polygon(-1.9% 100%, -1.9% 0%, 100% 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    svg {
+      position: absolute;
+      bottom: 0;
+    }
+  }
 }
