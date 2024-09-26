@@ -1,11 +1,7 @@
 {
   "sections": {
     "hero-section": {
-      "type": "hero-section",
-      "settings": {
-        "heading": "WILLKOMMEN BEI SHARPED MESSER",
-        "subheading": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
-      },
+      "type": "hero-section",      
       "blocks": {
         "slide-1": {
           "type": "hero-section-item",
@@ -36,19 +32,97 @@
           }
         }
       },
-      "block_order": [
-        "slide-0",
-        "slide-1",
-        "slide-2",
-        "slide-3",
-        "slide-4"
-      ],
-    
+      "block_order": ["slide-1", "slide-2", "slide-3", "slide-4"]
     },
-    
+    "product-slider-tab-section": {
+      "type": "product-slider-tab-section",
+      "settings": {
+        "heading": "WILLKOMMEN BEI SHARPED MESSER",
+        "subheading": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
+      },
+      "blocks": {
+        "tab-1": {
+          "type": "product-slider-tab",
+          "settings": {
+            "title": "EINZELMESSER",
+            "tab-id": "einzelmesser"
+          }
+        },
+        "tab-2": {
+          "type": "product-slider-tab",
+          "settings": {
+            "title": "KOLLEKTION",
+            "tab-id": "kollektion"
+          }
+        },
+        "product-1": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "einzelmesser",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        },
+        "product-2": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "einzelmesser",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        },
+        "product-3": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "einzelmesser",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        },
+        "product-4": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        },
+        "product-5": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        },
+        "product-6": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Professional SG2 Bunka 165mm",
+            "product_price": "55,00 € 50,00 €",
+            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+          }
+        }
+      },
+      "block_order": ["tab-1", "tab-2", "product-1", "product-2", "product-3", "product-4", "product-5", "product-6"]
+    },
+    "about-section": {
+      "type": "about-section",
+      "settings": {
+        "title": "Ein Blick hinter Sharped Messer",
+        "description": "Ein entspannter Urlaub in Vietnam im Jahr 2022 entfachte eine Leidenschaft, die unser Leben komplett verändern sollte. Nachdem wir unser erstes vietnamesisches Messer in Hanoi gekauft hatten, waren wir von der Leistung, Schönheit und Handwerkskunst des Handwerkers überwältigt. Da wir wussten, dass wir nie wieder normale Messer benutzen könnten, fragten wir uns: \"Warum hat nicht jede Küche eines davon?!\" Aus dieser Frage entstand im Jahr 2024 Sharped Messer und seitdem haben wir langanhaltende Beziehungen zu den talentiertesten Handwerkern Vietnams aufgebaut. Wenn Sie bei Sharped Messer einkaufen, unterstützen Sie direkt diese Handwerker, von denen einige eine Werkzeug- und Schwertschmiede-Tradition haben, die über 1000 Jahre zurückreicht. Viel Spaß beim Kochen! Robert & Lan vom Sharped Messer Team"
+      }
+    }
   },
   "order": [
     "hero-section",
-
+    "product-slider-tab-section",
+    "about-section",
   ]
 }
