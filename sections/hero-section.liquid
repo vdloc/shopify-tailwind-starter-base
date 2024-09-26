@@ -94,7 +94,13 @@
             <picture class='tw-block'>
               <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
               <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
-              <img src='{{ image_src_large }}' alt='{{ block.settings.alt_text }}' width='1440' height='576'>
+              <img
+                src='{{ image_src_large }}'
+                alt='{{ block.settings.alt_text }}'
+                width='1440'
+                height='576'
+                class='tw-object-cover tw-w-full'
+              >
             </picture>
             <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-grid tw-grid-rows-[1fr_min-content_min-content]'>
               {%- if block.settings.text != blank -%}
@@ -104,26 +110,28 @@
                     class='tw-no-underline tw-self-center'
                   >
                 {%- endif -%}
-                <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem]'>
+                <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem] lg:tw-w-fit lg:tw-mx-auto'>
                   <span>{{ block.settings.text | escape }}</span>
                 </p>
                 {%- if block.settings.link != blank -%}
                   </a>
                 {%- endif -%}
               {%- endif -%}
-              {% if block.settings.product_price != blank %}
-                <p class='tw-font-league-spartan tw-text[18px] tw-text-white tw-font-bold tw-text-center tw-self-end tw-mb-3'>
-                  {{ block.settings.product_price }}
-                </p>
-              {% endif %}
-              <a
-                href='{{block.settings.url}}'
-                class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-white tw-self-end tw-w-fit tw-justify-self-center'
-              >
-                <span class='tw-text-black tw-font-normal'>
-                  {{ block.settings.button_text }}
-                </span>
-              </a>
+              <div class='tw-grid tw-place-content-center lg:tw-absolute lg:tw-top-[30%] lg:tw-right-[20%] lg:tw-justify-items-start'>
+                {% if block.settings.product_price != blank %}
+                  <p class='tw-font-league-spartan tw-text[18px] tw-text-white tw-font-bold tw-text-center tw-self-end tw-mb-3 '>
+                    {{ block.settings.product_price }}
+                  </p>
+                {% endif %}
+                <a
+                  href='{{block.settings.url}}'
+                  class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-white tw-self-end tw-w-fit tw-justify-self-center'
+                >
+                  <span class='tw-text-black tw-font-normal'>
+                    {{ block.settings.button_text }}
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
