@@ -1,22 +1,20 @@
-@layer components {
-  .embla {
-    --embla-items-count: var(--embla-items-count, 1);
-    --embla-gap: var(--embla-gap, 0px);
+.embla {
+  --embla-items-count: var(--embla-items-count, 1);
+  --embla-gap: var(--embla-gap, 0px);
 
-    @apply tw-overflow-hidden;
+  @apply tw-overflow-hidden;
 
-    &__container {
-      @apply tw-flex;
-      gap: var(--embla-gap);
-    }
+  &__container {
+    @apply tw-flex;
+    gap: var(--embla-gap);
+  }
 
-    &__slide {
-      @apply tw-flex-grow-0 tw-flex-shrink-0 tw-w-full tw-min-w-0 tw-relative;
+  &__slide {
+    @apply tw-flex-grow-0 tw-flex-shrink-0 tw-w-full tw-min-w-0 tw-relative;
 
-      flex-basis: calc(
-        (100% - (var(--embla-gap) * (var(--embla-items-count) - 1))) /
-          var(--embla-items-count)
-      );
-    }
+    flex-basis: calc(
+      (100% - (var(--embla-gap) * (var(--embla-items-count) - 1))) /
+        var(--embla-items-count)
+    );
   }
 }
