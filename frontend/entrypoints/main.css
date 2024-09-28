@@ -1,3 +1,8 @@
+@import './components/header.css';
+@import './components/slider.css';
+@import './components/hero.css';
+@import './components/product-tabs.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +13,4 @@
     font-family: 'Work Sans', sans-serif;
     @apply tw-font-light;
   }
-}
-
-@layer components {
-  @import './components/header.css';
-  @import './components/slider.css';
-  @import './components/hero.css';
-  @import './components/product-tabs.css';
 }
