@@ -69,57 +69,103 @@
           "settings": {
             "tab-id": "einzelmesser",
             "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "product_price": "55,00 €",
+            "product_description": "High quality SG2 Bunka knife for precise cuts."
           }
         },
         "product-2": {
           "type": "product-slider-item",
           "settings": {
             "tab-id": "einzelmesser",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "product_name": "Senzo Professional SG2 Gyuto 210mm",
+            "product_price": "70,00 €",
+            "new_price": "65,00 €",
+            "product_description": "Premium SG2 Gyuto knife with ergonomic handle."
           }
         },
         "product-3": {
           "type": "product-slider-item",
           "settings": {
             "tab-id": "einzelmesser",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "product_name": "Senzo Professional SG2 Santoku 170mm",
+            "product_price": "60,00 €",
+            "product_description": "Versatile SG2 Santoku knife for all your kitchen needs."
           }
         },
         "product-4": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "tab-id": "einzelmesser",
+            "product_name": "Senzo Professional SG2 Nakiri 165mm",
+            "product_price": "65,00 €",
+            "product_description": "Efficient SG2 Nakiri knife for chopping vegetables."
           }
         },
         "product-5": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "tab-id": "einzelmesser",
+            "product_name": "Senzo Professional SG2 Petty 120mm",
+            "product_price": "45,00 €",
+            "product_description": "SG2 Petty knife for small, precise tasks."
           }
         },
         "product-6": {
           "type": "product-slider-item",
           "settings": {
             "tab-id": "kollektion",
-            "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_price": "55,00 € 50,00 €",
-            "product_description": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+            "product_name": "Senzo Classic Damascus Chef Knife 210mm",
+            "product_price": "80,00 €",
+            "product_description": "Classic Damascus chef knife with a beautiful pattern."
+          }
+        },
+        "product-7": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Classic Damascus Paring Knife 90mm",
+            "product_price": "40,00 €",
+            "product_description": "Compact Damascus paring knife for precision tasks."
+          }
+        },
+        "product-8": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Classic Damascus Utility Knife 150mm",
+            "product_price": "50,00 €",
+            "product_description": "Utility knife with a sharp Damascus blade for everyday use."
+          }
+        },
+        "product-9": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Classic Damascus Bread Knife 240mm",
+            "product_price": "75,00 €",
+            "product_description": "Damascus bread knife with a serrated edge for perfect slices."
+          }
+        },
+        "product-10": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Classic Damascus Boning Knife 150mm",
+            "product_price": "55,00 €",
+            "product_description": "Efficient Damascus boning knife for separating meat from bone."
+          }
+        },
+        "product-11": {
+          "type": "product-slider-item",
+          "settings": {
+            "tab-id": "kollektion",
+            "product_name": "Senzo Classic Damascus Slicing Knife 270mm",
+            "product_price": "85,00 €",
+            "product_description": "Long Damascus slicing knife for perfect cuts of meat."
           }
         }
-      },
-      "block_order": ["tab-1", "tab-2", "product-1", "product-2", "product-3", "product-4", "product-5", "product-6"]
+      },      
+      "block_order": ["tab-1", "tab-2", "product-1", "product-2", "product-3", "product-4", "product-5", "product-6", "product-7", "product-8", "product-9", "product-10", "product-11"]
     },
     "about-section": {
       "type": "about-section",

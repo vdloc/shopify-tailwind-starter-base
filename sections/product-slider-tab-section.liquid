@@ -28,7 +28,7 @@
         },
         {
           "type": "text",
-          "id": "tab_id",
+          "id": "tab-id",
           "label": "Tab ID",
           "default": "einzelmesser"
         }
@@ -46,9 +46,20 @@
         },
         {
           "type": "text",
+          "id": "product_link",
+          "label": "Product Link",
+          "default": "/"
+        },
+        {
+          "type": "text",
           "id": "product_price",
           "label": "Product Price",
-          "default": "55,00 € 50,00 €"
+          "default": "55,00 €"
+        },
+        {
+          "type": "text",
+          "id": "new_price",
+          "label": "New Product Price"
         },
         {
           "type": "textarea",
@@ -60,6 +71,11 @@
           "type": "image_picker",
           "id": "product_image",
           "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "tab-id",
+          "label": "Tab ID"
         }
       ]
     }
@@ -67,64 +83,85 @@
 }
 {% endschema %}
 
-<div class='product-slider-tab-section'>
-  <h3>{{ section.settings.heading }}</h3>
-  <h5>{{ section.settings.subheading }}</h5>
-  <section class='tabs'>
+<section class='product-slider-tab-section tw-container tw-pt-[7.5rem] md:tw-pt-[9rem] tw-px-[4.5rem]'>
+  <header class='tw-text-center tw-font-worksans'>
+    <h3 class='tw-text-[2rem] md:tw-text-[3.2rem] tw-font-bold'>{{ section.settings.heading }}</h3>
+    <h5 class='tw-text-[1.6rem] tw-mt-[3rem] md:tw-mt-[1rem]'>{{ section.settings.subheading }}</h5>
+  </header>
+  {% assign active_tab_id = '' %}
+  {% assign is_active_tab = true %}
+  <div class='tabs tw-mt-[90px] tw-flex tw-gap-[35px]'>
     {% for block in section.blocks %}
       {% if block.type == 'product-slider-tab' %}
-        <div class='tab' onclick='openTab(event, {{ block.settings.tab_id }})'>
+        {% if is_active_tab %}
+          {% assign active_tab_id = block.settings['tab-id'] %}
+        {% endif %}
+        <div
+          class='tab tw-font-semibold tw-text-[1.6rem] md:tw-text-[2.5rem] hover:tw-cursor-pointer {% if is_active_tab %}tw-border-b-2 tw-border-b-black{% endif %}'
+          data-tab-id='{{block.settings['tab-id']}}'
+        >
           <h3>{{ block.settings.title }}</h3>
+        </div>
+        {% assign is_active_tab = false %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class='tabs-content tw-grid'>
+    {% for block in section.blocks %}
+      {% if block.type == 'product-slider-tab' %}
+        {% assign tab_id = block.settings['tab-id'] %}
+        <div
+          class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-hidden'
+          id='{{block.settings['tab-id']}}'
+          style='{% if tab_id == active_tab_id %}display:flex{% endif %}'
+        >
+          <div class='embla__container'>
+            {% for block in section.blocks %}
+              {% if block.type == 'product-slider-item' and block.settings['tab-id'] == tab_id %}
+                <div class='product-slider-item embla__slide'>
+                  {% if block.settings.product_image %}
+                    {% assign image_src = block.settings.product_image | image_url: '400x300' %}
+                  {% else %}
+                    {% assign image_src = 'dao1.jpg' | asset_url %}
+                  {% endif %}
+                  <a href='{{block.settings.product_link}}' class='tw-block' title='{{block.settings.product_name}}'>
+                    <img
+                      src='{{ image_src }}'
+                      alt='{{ block.settings.product_name }}'
+                      width='400'
+                      height='300'
+                      class='tw-w-full'
+                    >
+                  </a>
+
+                  <h4 class='tw-mt-[90px] tw-font-league-spartan tw-text-[20px] tw-font-bold'>
+                    <a href='{{block.settings.product_link}}' title='{{block.settings.product_name}}'>
+                      {{ block.settings.product_name }}
+                    </a>
+                  </h4>
+                  <div class='tw-flex tw-gap-[2rem]'>
+                    {% if block.settings.new_price != '' %}
+                      <p class='tw-text-[18px] tw-font-bold tw-mt-[2rem] tw-text-[#52A634]'>
+                        {{ block.settings.new_price }}
+                      </p>
+                    {% endif %}
+                    <p class='tw-text-[18px] tw-text-black tw-font-bold tw-mt-[2rem] tw-relative {% if block.settings.new_price != '' %}after:tw-block after:tw-w-2/3 after:tw-h-[1px] after:tw-absolute after:tw-top-1/3 after:tw-bg-black after:tw-rotate-12 {% endif %}'>
+                      {{ block.settings.product_price }}
+                    </p>
+                  </div>
+                  <p class='tw-text-[1.8rem] tw-leading-tight tw-mt-[1.6rem]'>
+                    {{ block.settings.product_description }}
+                  </p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
     {% endfor %}
-    {% for block in section.blocks %}
-      <div class='embla'>
-        <div class='tab-content embla__container'>
-          {% for product in block.blocks %}
-            <div class='product-slider-item embla__slide'>
-              {% if product.settings.product_image %}
-                {% assign image_src = product.settings.product_image | image_url: '400x300' %}
-              {% else %}
-                {% assign image_src = 'dao1@0.5x 1.jpg' | asset_url %}
-              {% endif %}
-              {% if product.settings.product_image %}
-                <img
-                  src='{{ image_src |  asset_url }}'
-                  alt='{{ product.settings.product_name }}'
-                  width='400'
-                  height='300'
-                >
-              {% endif %}
-              <h4>{{ product.settings.product_name }}</h4>
-              <p>{{ product.settings.product_price }}</p>
-              <p>{{ product.settings.product_description }}</p>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </section>
-</div>
-
-<script>
-  function openTab(evt, tabName) {
-    const tabcontent = document.querySelectorAll('.tab');
-    const tablinks = document.querySelectorAll('.tab-content');
-
-    tabcontent.forEach((content) => {
-      content.style.display = 'none';
-    });
-
-    tablinks.forEach((link) => {
-      link.classList.remove('active');
-    });
-
-    document.getElementById(tabName).style.display = 'block';
-    evt.currentTarget.classList.add('active');
-  }
-</script>
+  </div>
+</section>
 
 {%- liquid
-  render 'vite-tag' with 'slider.js'
+  render 'vite-tag' with 'main.js'
 -%}

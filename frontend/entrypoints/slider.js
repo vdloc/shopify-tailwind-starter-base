@@ -1,8 +1,8 @@
-import 'vite/modulepreload-polyfill';
 import EmblaCarousel from 'embla-carousel';
 
-const emblaNode = document.querySelector('.embla');
-const options = { loop: false };
-const emblaApi = EmblaCarousel(emblaNode, options);
+const emblaNode = document.querySelectorAll('.embla');
 
-console.log(emblaApi.slideNodes()); // Access API
+emblaNode.forEach((node) => {
+  const options = { loop: false, align: 'center' };
+  const emblaApi = EmblaCarousel(node, options);
+});

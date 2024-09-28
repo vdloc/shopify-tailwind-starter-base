@@ -1,0 +1,12 @@
+@layer components {
+  .header {
+    &-wrapper {
+      @apply tw-bg-gray-50;
+    }
+
+    &__menu-item,
+    &__active-menu-item {
+      @apply tw-text-white;
+    }
+  }
+}
