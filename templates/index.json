@@ -56,13 +56,15 @@
         "tab-1": {
           "type": "product-slider-tab",
           "settings": {
-            "title": "EINZELMESSER"
+            "title": "EINZELMESSER",
+            "tab-id": "einzelmesser"
           }
         },
         "tab-2": {
           "type": "product-slider-tab",
           "settings": {
-            "title": "KOLLEKTION"
+            "title": "KOLLEKTION",
+            "tab-id": "kollektion"
           }
         },
         "product-1": {
@@ -150,9 +152,9 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Boning Knife 150mm",
-            "product_price": "55,00 €",
+            "product_price": "55,023 €",
             "product_description": "Efficient Damascus boning knife for separating meat from bone.",
-            "tab-id": "kollektion"
+            "tab-id": "kollektion" 
           }
         },
         "product-11": {

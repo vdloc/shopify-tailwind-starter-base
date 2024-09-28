@@ -110,6 +110,7 @@
     {% for block in section.blocks %}
       {% if block.type == 'product-slider-tab' %}
         {% assign tab_id = block.settings['tab-id'] %}
+        <h1>{{ block.settings['tab-id'] }}</h1>
         <div
           class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-hidden'
           id='{{block.settings['tab-id']}}'
