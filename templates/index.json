@@ -76,96 +76,112 @@
         "product-2": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "einzelmesser",
             "product_name": "Senzo Professional SG2 Gyuto 210mm",
             "product_price": "70,00 €",
             "new_price": "65,00 €",
-            "product_description": "Premium SG2 Gyuto knife with ergonomic handle."
+            "product_description": "Premium SG2 Gyuto knife with ergonomic handle.",
+            "tab-id": "einzelmesser"
           }
         },
         "product-3": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "einzelmesser",
             "product_name": "Senzo Professional SG2 Santoku 170mm",
             "product_price": "60,00 €",
-            "product_description": "Versatile SG2 Santoku knife for all your kitchen needs."
+            "product_description": "Versatile SG2 Santoku knife for all your kitchen needs.",
+            "tab-id": "einzelmesser"
           }
         },
         "product-4": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "einzelmesser",
             "product_name": "Senzo Professional SG2 Nakiri 165mm",
             "product_price": "65,00 €",
-            "product_description": "Efficient SG2 Nakiri knife for chopping vegetables."
+            "product_description": "Efficient SG2 Nakiri knife for chopping vegetables.",
+            "tab-id": "einzelmesser"
           }
         },
         "product-5": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "einzelmesser",
             "product_name": "Senzo Professional SG2 Petty 120mm",
             "product_price": "45,00 €",
-            "product_description": "SG2 Petty knife for small, precise tasks."
+            "product_description": "SG2 Petty knife for small, precise tasks.",
+            "tab-id": "einzelmesser"
           }
         },
         "product-6": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Chef Knife 210mm",
             "product_price": "80,00 €",
-            "product_description": "Classic Damascus chef knife with a beautiful pattern."
+            "product_description": "Classic Damascus chef knife with a beautiful pattern.",
+            "tab-id": "kollektion"
           }
         },
         "product-7": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Paring Knife 90mm",
             "product_price": "40,00 €",
-            "product_description": "Compact Damascus paring knife for precision tasks."
+            "product_description": "Compact Damascus paring knife for precision tasks.",
+            "tab-id": "kollektion"
           }
         },
         "product-8": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Utility Knife 150mm",
             "product_price": "50,00 €",
-            "product_description": "Utility knife with a sharp Damascus blade for everyday use."
+            "product_description": "Utility knife with a sharp Damascus blade for everyday use.",
+            "tab-id": "kollektion"
           }
         },
         "product-9": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Bread Knife 240mm",
             "product_price": "75,00 €",
-            "product_description": "Damascus bread knife with a serrated edge for perfect slices."
+            "product_description": "Damascus bread knife with a serrated edge for perfect slices.",
+            "tab-id": "kollektion"
           }
         },
         "product-10": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Boning Knife 150mm",
             "product_price": "55,00 €",
-            "product_description": "Efficient Damascus boning knife for separating meat from bone."
+            "product_description": "Efficient Damascus boning knife for separating meat from bone.",
+            "tab-id": "kollektion"
           }
         },
         "product-11": {
           "type": "product-slider-item",
           "settings": {
-            "tab-id": "kollektion",
             "product_name": "Senzo Classic Damascus Slicing Knife 270mm",
             "product_price": "85,00 €",
-            "product_description": "Long Damascus slicing knife for perfect cuts of meat."
+            "product_description": "Long Damascus slicing knife for perfect cuts of meat.",
+            "tab-id": "kollektion"
           }
         }
-      },      
-      "block_order": ["tab-1", "tab-2", "product-1", "product-2", "product-3", "product-4", "product-5", "product-6", "product-7", "product-8", "product-9", "product-10", "product-11"]
+      },
+      "block_order": [
+        "tab-1",
+        "tab-2",
+        "product-1",
+        "product-2",
+        "product-3",
+        "product-4",
+        "product-5",
+        "product-6",
+        "product-7",
+        "product-8",
+        "product-9",
+        "product-10",
+        "product-11"
+      ],
+      "settings": {
+      }
     },
     "about-section": {
       "type": "about-section",
