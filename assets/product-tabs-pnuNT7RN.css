@@ -1,0 +1,14 @@
+.product-slider-tab-section .embla {
+  --embla-gap: 4.5rem;
+  --embla-items-count: 1;
+}
+@media screen and (min-width: 768px) {
+  .product-slider-tab-section .embla {
+    --embla-items-count: 2;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .product-slider-tab-section .embla {
+    --embla-items-count: 3;
+  }
+}

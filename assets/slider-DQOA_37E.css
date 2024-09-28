@@ -1,0 +1,20 @@
+.embla {
+  --embla-items-count: var(--embla-items-count, 1);
+  --embla-gap: var(--embla-gap, 0px);
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: var(--embla-gap);
+}
+.embla__slide {
+  position: relative;
+  width: 100%;
+  min-width: 0px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: calc(
+    (100% - (var(--embla-gap) * (var(--embla-items-count) - 1))) /
+      var(--embla-items-count)
+  );
+}
