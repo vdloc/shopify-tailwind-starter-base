@@ -80,21 +80,21 @@
   <div class='embla tw-relative'>
     <div class='embla__container'>
       {%- for block in section.blocks -%}
-        {% assign image_src_large = block.settings.image_desktop | file_img_url %}
-        {% assign image_src_medium = block.settings.image_tablet | file_img_url %}
-        {% assign image_src_small = block.settings.image_mobile | file_img_url %}
+        {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
+        {% assign image_src_medium = block.settings.image_tablet | image_url: width: 1024 %}
+        {% assign image_src_small = block.settings.image_mobile | image_url: width: 768 %}
 
         {% unless image_src_large %}
           {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
         {% endunless %}
 
-        {% unless image_src_medium %}
+        {% if image_src_medium == null %}
           {% assign image_src_medium = image_src_large %}
-        {% endunless %}
+        {% endif %}
 
-        {% unless image_src_small %}
+        {% if image_src_small == null %}
           {% assign image_src_small = image_src_large %}
-        {% endunless %}
+        {% endif %}
 
         <div
           class='embla__slide'
