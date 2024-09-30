@@ -83,11 +83,14 @@
 }
 {% endschema %}
 
-<section class='product-slider-tab-section tw-container tw-pt-[7.5rem] md:tw-pt-[9rem] tw-px-[4.5rem]'>
+<section class='product-slider-tab-section tw-container tw-pt-[7.5rem] md:tw-pt-[9rem] tw-px-[4.5rem] tw-relative'>
   <header class='tw-text-center tw-font-worksans'>
     <h3 class='tw-text-[2rem] md:tw-text-[3.2rem] tw-font-bold'>{{ section.settings.heading }}</h3>
     <h5 class='tw-text-[1.6rem] tw-mt-[3rem] md:tw-mt-[1rem]'>{{ section.settings.subheading }}</h5>
   </header>
+  <picture class='tw-absolute tw-top-0 -tw-translate-y-1/2 tw-right-0 tw-translate-x-1/2 tw-opacity-60'>
+    <img src='{{ 'totem.png' | asset_url}}' width='800' height='800'>
+  </picture>
   {% assign active_tab_id = '' %}
   {% assign is_active_tab = true %}
   <div class='tabs tw-mt-[90px] tw-flex tw-gap-[35px]'>
@@ -110,7 +113,6 @@
     {% for block in section.blocks %}
       {% if block.type == 'product-slider-tab' %}
         {% assign tab_id = block.settings['tab-id'] %}
-        <h1>{{ block.settings['tab-id'] }}</h1>
         <div
           class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-hidden'
           id='{{block.settings['tab-id']}}'

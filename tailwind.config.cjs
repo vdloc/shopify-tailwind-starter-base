@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const utils = require('./tailwind/utils');
 module.exports = {
   prefix: 'tw-',
   content: ['./**/*.liquid', './frontend/**/*.{js,ts,jsx,tsx}'],
@@ -33,5 +34,5 @@ module.exports = {
     x2lg: '1920px',
     pageMaxWidth: '1440px',
   },
-  plugins: [],
+  plugins: [utils],
 };
