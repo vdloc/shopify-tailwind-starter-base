@@ -13,7 +13,6 @@ class Tabs {
       tab: tabSelector,
       content: tabContentSelector,
     };
-    this.init();
   }
   init() {
     this.onTabClick = this.onTabClick.bind(this);
@@ -32,20 +31,17 @@ class Tabs {
     });
 
     this.tabsContent.forEach((tabContent) => {
-      tabContent.style.display = 'none';
+      tabContent.classList.add(...['tw-opacity-0', 'tw-invisible', '-tw-z-10']);
     });
 
     if (activeTabContent) {
-      activeTabContent.style.display = 'block';
+      activeTabContent.classList.remove(
+        ...['tw-opacity-0', 'tw-invisible', '-tw-z-10'],
+      );
     }
 
     tab.classList.add(...this.classes.active);
   }
 }
 
-new Tabs({
-  containerSelector: '.product-slider-tab-section',
-  activeClass: ['tw-border-b-2', 'tw-border-b-black'],
-  tabSelector: '.tab',
-  tabContentSelector: '.tab-content',
-});
+export default Tabs;
