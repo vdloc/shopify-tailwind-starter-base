@@ -22,8 +22,18 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
-          "label": "Slide Image"
+          "id": "image_desktop",
+          "label": "Slide Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Slide Image Tablet"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Slide Image Mobile"
         },
         {
           "type": "text",
@@ -70,15 +80,22 @@
   <div class='embla tw-relative'>
     <div class='embla__container'>
       {%- for block in section.blocks -%}
-        {% if block.settings.image %}
-          {% assign image_src_large = block.settings.image | image_url: '1440x576' %}
-          {% assign image_src_medium = block.settings.image | image_url: '1024x410' %}
-          {% assign image_src_small = block.settings.image | image_url: '768x307' %}
-        {% else %}
+        {% assign image_src_large = block.settings.image_desktop | file_url %}
+        {% assign image_src_medium = block.settings.image_tablet | file_url %}
+        {% assign image_src_small = block.settings.image_mobile | file_url %}
+
+        {% unless image_src_large %}
           {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
-          {% assign image_src_medium = 'Jonathan.jpg' | asset_url %}
-          {% assign image_src_small = 'Jonathan_mobile.jpg' | asset_url %}
-        {% endif %}
+        {% endunless %}
+
+        {% unless image_src_medium %}
+          {% assign image_src_medium = image_src_large %}
+        {% endunless %}
+
+        {% unless image_src_small %}
+          {% assign image_src_small = image_src_large %}
+        {% endunless %}
+
         <div
           class='embla__slide'
           id='Slide-{{ section.id }}-{{ forloop.index }}'

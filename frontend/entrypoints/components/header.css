@@ -1,4 +1,7 @@
 .header {
+  &.custom-header {
+    @apply tw-py-0;
+  }
   &-wrapper {
     @apply tw-bg-gray-50;
   }
