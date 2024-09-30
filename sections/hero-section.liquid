@@ -80,9 +80,9 @@
   <div class='embla tw-relative'>
     <div class='embla__container'>
       {%- for block in section.blocks -%}
-        {% assign image_src_large = block.settings.image_desktop | file_url %}
-        {% assign image_src_medium = block.settings.image_tablet | file_url %}
-        {% assign image_src_small = block.settings.image_mobile | file_url %}
+        {% assign image_src_large = block.settings.image_desktop %}
+        {% assign image_src_medium = block.settings.image_tablet %}
+        {% assign image_src_small = block.settings.image_mobile %}
 
         {% unless image_src_large %}
           {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
