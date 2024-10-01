@@ -14,3 +14,11 @@
     @apply tw-font-light;
   }
 }
+
+@layer utilities {
+  .container-header {
+    @apply tw-container;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

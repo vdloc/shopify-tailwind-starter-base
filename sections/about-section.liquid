@@ -21,13 +21,23 @@
 }
 {% endschema %}
 
-<div class='about-section'>
-  {% for block in section.blocks %}
-    <div class='slide'>
-      <img src='{{ block.settings.image | image_url: 'large' }}' alt='Slide Image' width='500' height='600'>
-    </div>
-  {% endfor %}
-  <h2>{{ section.settings.title }}</h2>
-  <p>{{ section.settings.content }}</p>
-</div>
-
+<section class='tw-bg-[#D9D9D9] tw-py-[7rem] md:tw-py-[9rem]'>
+  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap tw-gap-[3rem]'>
+    <section class='md:tw-max-w-[75rem] md:tw-w-3/5'>
+      <h4 class='tw-text-[2rem] md:tw-text-[2.5rem] tw-font-bold'>{{ section.settings.title }}</h4>
+      <p class='tw-text-[1.6rem] md:tw-text-[1.8rem] tw-leading-tight tw-mt-[3rem]'>{{ section.settings.content }}</p>
+    </section>
+    <figure>
+      {% assign image_src = section.settings.image | image_url: width: 500 %}
+      <picture class='tw-block'>
+        <img
+          src='{{ image_src }}'
+          alt='{{ section.settings.title }}'
+          width='500'
+          height='500'
+          class='tw-object-cover tw-w-full'
+        >
+      </picture>
+    </figure>
+  </div>
+</section>
