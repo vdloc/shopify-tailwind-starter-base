@@ -15,12 +15,12 @@
         "slide-1": {
           "type": "hero-section-item",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/9d0190bdcbecce581997e3810f418b7c.png",
-            "image_mobile": "shopify:\/\/shop_images\/595052951912962dff7ac689060a080c.png",
+            "image_desktop": "shopify://shop_images/9d0190bdcbecce581997e3810f418b7c.png",
+            "image_mobile": "shopify://shop_images/595052951912962dff7ac689060a080c.png",
             "alt_text": "Slide Image",
             "product_price": "80,- €",
             "text": "umweltfreundlicher, handgefertigter Messer aus Carbon Stahl",
-            "link": "shopify:\/\/products\/the-3p-fulfilled-snowboard",
+            "link": "shopify://products/the-3p-fulfilled-snowboard",
             "button_text": "Zum Messer"
           }
         },
@@ -30,7 +30,7 @@
             "alt_text": "Slide Image",
             "product_price": "80,- €",
             "text": "Nachhaltige, handgefertigte Messer aus Kohlenstoffstahl",
-            "link": "\/",
+            "link": "/",
             "button_text": "Zum Messer"
           }
         },
@@ -40,7 +40,7 @@
             "alt_text": "Slide Image",
             "product_price": "80,- €",
             "text": "Umweltbewusste, handgemachte Messer aus Karbonstahl",
-            "link": "\/",
+            "link": "/",
             "button_text": "Zum Messer"
           }
         },
@@ -50,7 +50,7 @@
             "alt_text": "Slide Image",
             "product_price": "80,- €",
             "text": "Umweltverträgliche, handgearbeitete Messer aus Kohlenstoffstahl",
-            "link": "\/",
+            "link": "/",
             "button_text": "Zum Messer"
           }
         }
@@ -87,7 +87,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Professional SG2 Bunka 165mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "55,00 €",
             "new_price": "",
             "product_description": "High quality SG2 Bunka knife for precise cuts.",
@@ -98,7 +98,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Professional SG2 Gyuto 210mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "70,00 €",
             "new_price": "65,00 €",
             "product_description": "Premium SG2 Gyuto knife with ergonomic handle.",
@@ -109,7 +109,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Professional SG2 Santoku 170mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "60,00 €",
             "new_price": "",
             "product_description": "Versatile SG2 Santoku knife for all your kitchen needs.",
@@ -120,7 +120,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Professional SG2 Nakiri 165mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "65,00 €",
             "new_price": "",
             "product_description": "Efficient SG2 Nakiri knife for chopping vegetables.",
@@ -131,7 +131,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Professional SG2 Petty 120mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "45,00 €",
             "new_price": "",
             "product_description": "SG2 Petty knife for small, precise tasks.",
@@ -142,7 +142,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Chef Knife 210mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "80,00 €",
             "new_price": "",
             "product_description": "Classic Damascus chef knife with a beautiful pattern.",
@@ -153,7 +153,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Paring Knife 90mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "40,00 €",
             "new_price": "",
             "product_description": "Compact Damascus paring knife for precision tasks.",
@@ -164,7 +164,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Utility Knife 150mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "50,00 €",
             "new_price": "",
             "product_description": "Utility knife with a sharp Damascus blade for everyday use.",
@@ -175,7 +175,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Bread Knife 240mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "75,00 €",
             "new_price": "",
             "product_description": "Damascus bread knife with a serrated edge for perfect slices.",
@@ -186,7 +186,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Boning Knife 150mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "55,023 €",
             "new_price": "",
             "product_description": "Efficient Damascus boning knife for separating meat from bone.",
@@ -197,7 +197,7 @@
           "type": "product-slider-item",
           "settings": {
             "product_name": "Senzo Classic Damascus Slicing Knife 270mm",
-            "product_link": "\/",
+            "product_link": "/",
             "product_price": "85,00 €",
             "new_price": "",
             "product_description": "Long Damascus slicing knife for perfect cuts of meat.",
@@ -228,8 +228,9 @@
     "about-section": {
       "type": "about-section",
       "settings": {
+        "image": "shopify://shop_images/06ec8a5d42302511a3e3c6474dcfe3f5.png",
         "title": "Ein Blick hinter Sharped Messer",
-        "content": "Ein entspannter Urlaub in Vietnam im Jahr 2022 entfachte eine Leidenschaft, die unser Leben komplett verändern sollte. Nachdem wir unser erstes vietnamesisches Messer in Hanoi gekauft hatten, waren wir von der Leistung, Schönheit und Handwerkskunst des Handwerkers überwältigt. Da wir wussten, dass wir nie wieder normale Messer benutzen könnten, fragten wir uns: \"Warum hat nicht jede Küche eines davon?!\" Aus dieser Frage entstand im Jahr 2024 Sharped Messer und seitdem haben wir langanhaltende Beziehungen zu den talentiertesten Handwerkern Vietnams aufgebaut. Wenn Sie bei Sharped Messer einkaufen, unterstützen Sie direkt diese Handwerker, von denen einige eine Werkzeug- und Schwertschmiede-Tradition haben, die über 1000 Jahre zurückreicht. Viel Spaß beim Kochen! Robert & Lan vom Sharped Messer Team"
+        "content": "Ein entspannter Urlaub in Vietnam im Jahr 2022 entfachte eine Leidenschaft, die unser Leben komplett verändern sollte. Nachdem wir unser erstes vietnamesisches Messer in Hanoi gekauft hatten, waren wir von der Leistung, Schönheit und Handwerkskunst des Handwerkers überwältigt. \nDa wir wussten, dass wir nie wieder normale Messer benutzen könnten, fragten wir uns: \"Warum hat nicht jede Küche eines davon?!\" \nAus dieser Frage entstand im Jahr 2024 Sharped Messer und seitdem haben wir langanhaltende Beziehungen zu den talentiertesten Handwerkern Vietnams aufgebaut. Wenn Sie bei Sharped Messer einkaufen, unterstützen Sie direkt diese Handwerker, von denen einige eine Werkzeug- und Schwertschmiede-Tradition haben, die über 1000 Jahre zurückreicht. \nViel Spaß beim Kochen! \nRobert & Lan vom Sharped Messer Team"
       }
     }
   },
