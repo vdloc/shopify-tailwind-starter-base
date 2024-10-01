@@ -82,87 +82,86 @@
   ]
 }
 {% endschema %}
-
-<section class='product-slider-tab-section tw-container tw-py-[7.5rem] md:tw-py-[9rem] tw-relative'>
-  <header class='tw-text-center tw-font-worksans'>
-    <h3 class='tw-text-[2rem] md:tw-text-[3.2rem] tw-font-bold'>{{ section.settings.heading }}</h3>
-    <h5 class='tw-text-[1.6rem] tw-mt-[3rem] md:tw-mt-[1rem]'>{{ section.settings.subheading }}</h5>
-  </header>
-  <div class='tw-w-screen tw-absolute tw-left-1/2 -tw-translate-x-1/2'>
-    <div class='tw-absolute tw-top-0 -tw-translate-y-1/2 tw-right-0 tw-opacity-60 tw-w-[40rem] tw-aspect-[1/2] tw-overflow-hidden'>
-      <img src='{{ 'totem.png' | asset_url}}' width='800' height='800' class='tw-absolute '>
-    </div>
-  </div>
-  {% assign active_tab_id = '' %}
-  {% assign is_active_tab = true %}
-  <div class='tabs tw-mt-[90px] tw-flex tw-gap-[35px]'>
-    {% for block in section.blocks %}
-      {% if block.type == 'product-slider-tab' %}
-        {% if is_active_tab %}
-          {% assign active_tab_id = block.settings['tab-id'] %}
+<section class='product-slider-tab-section tw-relative'>
+  <div class=' tw-container tw-py-[7.5rem] md:tw-py-[9rem] tw-relative'>
+    <header class='tw-text-center tw-font-worksans'>
+      <h3 class='tw-text-[2rem] md:tw-text-[3.2rem] tw-font-bold'>{{ section.settings.heading }}</h3>
+      <h5 class='tw-text-[1.6rem] tw-mt-[3rem] md:tw-mt-[1rem]'>{{ section.settings.subheading }}</h5>
+    </header>
+    {% assign active_tab_id = '' %}
+    {% assign is_active_tab = true %}
+    <div class='tabs tw-mt-[90px] tw-flex tw-gap-[35px]'>
+      {% for block in section.blocks %}
+        {% if block.type == 'product-slider-tab' %}
+          {% if is_active_tab %}
+            {% assign active_tab_id = block.settings['tab-id'] %}
+          {% endif %}
+          <div
+            class='tab tw-font-semibold tw-text-[1.6rem] md:tw-text-[2.5rem] hover:tw-cursor-pointer {% if is_active_tab %}tw-border-b-2 tw-border-b-black{% endif %}'
+            data-tab-id='{{block.settings['tab-id']}}'
+          >
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+          {% assign is_active_tab = false %}
         {% endif %}
-        <div
-          class='tab tw-font-semibold tw-text-[1.6rem] md:tw-text-[2.5rem] hover:tw-cursor-pointer {% if is_active_tab %}tw-border-b-2 tw-border-b-black{% endif %}'
-          data-tab-id='{{block.settings['tab-id']}}'
-        >
-          <h3>{{ block.settings.title }}</h3>
-        </div>
-        {% assign is_active_tab = false %}
-      {% endif %}
-    {% endfor %}
-  </div>
-  <div class='tabs-content tw-grid'>
-    {% for block in section.blocks %}
-      {% if block.type == 'product-slider-tab' %}
-        {% assign tab_id = block.settings['tab-id'] %}
-        <div
-          class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-flex tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
-          id='{{block.settings['tab-id']}}'
-        >
-          <div class='embla__container'>
-            {% for block in section.blocks %}
-              {% if block.type == 'product-slider-item' and block.settings['tab-id'] == tab_id %}
-                <div class='product-slider-item embla__slide'>
-                  {% if block.settings.product_image %}
-                    {% assign image_src = block.settings.product_image | image_url: '400x300' %}
-                  {% else %}
-                    {% assign image_src = 'dao1.jpg' | asset_url %}
-                  {% endif %}
-                  <a href='{{block.settings.product_link}}' class='tw-block' title='{{block.settings.product_name}}'>
-                    <img
-                      src='{{ image_src }}'
-                      alt='{{ block.settings.product_name }}'
-                      width='400'
-                      height='300'
-                      class='tw-w-full'
-                    >
-                  </a>
-
-                  <h4 class='tw-mt-[90px] tw-font-league-spartan tw-text-[20px] tw-font-bold'>
-                    <a href='{{block.settings.product_link}}' title='{{block.settings.product_name}}'>
-                      {{ block.settings.product_name }}
-                    </a>
-                  </h4>
-                  <div class='tw-flex tw-gap-[2rem]'>
-                    {% if block.settings.new_price != '' %}
-                      <p class='tw-text-[18px] tw-font-bold tw-mt-[2rem] tw-text-[#52A634]'>
-                        {{ block.settings.new_price }}
-                      </p>
+      {% endfor %}
+    </div>
+    <div class='tabs-content tw-grid'>
+      {% for block in section.blocks %}
+        {% if block.type == 'product-slider-tab' %}
+          {% assign tab_id = block.settings['tab-id'] %}
+          <div
+            class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-flex tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
+            id='{{block.settings['tab-id']}}'
+          >
+            <div class='embla__container'>
+              {% for block in section.blocks %}
+                {% if block.type == 'product-slider-item' and block.settings['tab-id'] == tab_id %}
+                  <div class='product-slider-item embla__slide'>
+                    {% if block.settings.product_image %}
+                      {% assign image_src = block.settings.product_image | image_url: '400x300' %}
+                    {% else %}
+                      {% assign image_src = 'dao1.jpg' | asset_url %}
                     {% endif %}
-                    <p class='tw-text-[18px] tw-text-black tw-font-bold tw-mt-[2rem] tw-relative {% if block.settings.new_price != '' %}after:tw-block after:tw-w-2/3 after:tw-h-[1px] after:tw-absolute after:tw-top-1/3 after:tw-bg-black after:tw-rotate-12 {% endif %}'>
-                      {{ block.settings.product_price }}
+                    <a href='{{block.settings.product_link}}' class='tw-block' title='{{block.settings.product_name}}'>
+                      <img
+                        src='{{ image_src }}'
+                        alt='{{ block.settings.product_name }}'
+                        width='400'
+                        height='300'
+                        class='tw-w-full'
+                      >
+                    </a>
+
+                    <h4 class='tw-mt-[90px] tw-font-league-spartan tw-text-[20px] tw-font-bold'>
+                      <a href='{{block.settings.product_link}}' title='{{block.settings.product_name}}'>
+                        {{ block.settings.product_name }}
+                      </a>
+                    </h4>
+                    <div class='tw-flex tw-gap-[2rem]'>
+                      {% if block.settings.new_price != '' %}
+                        <p class='tw-text-[18px] tw-font-bold tw-mt-[2rem] tw-text-[#52A634]'>
+                          {{ block.settings.new_price }}
+                        </p>
+                      {% endif %}
+                      <p class='tw-text-[18px] tw-text-black tw-font-bold tw-mt-[2rem] tw-relative {% if block.settings.new_price != '' %}after:tw-block after:tw-w-2/3 after:tw-h-[1px] after:tw-absolute after:tw-top-1/3 after:tw-bg-black after:tw-rotate-12 {% endif %}'>
+                        {{ block.settings.product_price }}
+                      </p>
+                    </div>
+                    <p class='tw-text-[1.8rem] tw-leading-tight tw-mt-[1.6rem]'>
+                      {{ block.settings.product_description }}
                     </p>
                   </div>
-                  <p class='tw-text-[1.8rem] tw-leading-tight tw-mt-[1.6rem]'>
-                    {{ block.settings.product_description }}
-                  </p>
-                </div>
-              {% endif %}
-            {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class='tw-absolute tw-top-0 -tw-translate-y-1/2 tw-right-0 tw-opacity-60 tw-w-1/2 md:tw-w-[40rem] tw-aspect-[1/2] tw-overflow-hidden tw-pointer-events-none -tw-z-10'>
+    <img src='{{ 'totem.png' | asset_url}}' width='800' height='800' class='tw-absolute '>
   </div>
 </section>
 
