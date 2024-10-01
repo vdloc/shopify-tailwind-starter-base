@@ -16,6 +16,7 @@
           "type": "hero-section-item",
           "settings": {
             "image_desktop": "shopify://shop_images/9d0190bdcbecce581997e3810f418b7c.png",
+            "image_mobile": "shopify://shop_images/595052951912962dff7ac689060a080c.png",
             "alt_text": "Slide Image",
             "product_price": "80,- €",
             "text": "umweltfreundlicher, handgefertigter Messer aus Carbon Stahl",
