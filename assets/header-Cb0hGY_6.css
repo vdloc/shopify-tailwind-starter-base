@@ -1,0 +1,13 @@
+.header.header-custom {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.header-wrapper {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.header__menu-item,
+.header__active-menu-item {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
