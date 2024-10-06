@@ -16,3 +16,7 @@
     bottom: 0;
   }
 }
+
+.hero-banner {
+  height: calc(100dvh - var(--header-height) - var(--announcement-height));
+}

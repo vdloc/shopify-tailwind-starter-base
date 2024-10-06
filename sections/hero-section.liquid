@@ -26,11 +26,11 @@
           tabindex='-1'
         >
           <div
-            class='tw-relative'
+            class='tw-relative hero-banner'
             role='region'
             aria-label='{{ block.settings.text | t }}'
           >
-            <picture class='tw-block'>
+            <picture class='tw-block tw-absolute tw-h-full tw-w-full -tw-z-10'>
               <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
               <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
               <img
@@ -38,7 +38,7 @@
                 alt='{{ block.settings.alt_text }}'
                 width='1440'
                 height='576'
-                class='tw-object-cover tw-w-full'
+                class='tw-object-cover tw-w-full tw-h-full tw-absolute'
               >
             </picture>
             <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-grid tw-grid-rows-[1fr_min-content_min-content]'>

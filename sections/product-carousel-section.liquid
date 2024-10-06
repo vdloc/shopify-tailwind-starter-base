@@ -3,13 +3,23 @@
   "name": "Product Carousel Section",
   "blocks": [
     {
-      "type": "product",
+      "type": "product-carousel-item",
       "name": "Product",
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
-          "label": "Product Image"
+          "id": "image_desktop",
+          "label": "Product Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Product Image Tablet"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Product Image Mobile"
         },
         {
           "type": "text",
@@ -22,9 +32,14 @@
           "label": "Product Price"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "product_description",
           "label": "Product Description"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product URL"
         }
       ]
     }
@@ -33,21 +48,85 @@
 {% endschema %}
 
 <div class='product-carousel-section'>
-  <div class='products'>
-    {% for block in section.blocks %}
-      <div class='product-item'>
-        <img
-          src='{{ block.settings.image | image_url: 'medium' }}'
-          alt='{{ block.settings.product_name }}'
-          width='500'
-          height='600'
+  <div class='embla tw-relative'>
+    <div class='embla__container'>
+      {%- for block in section.blocks -%}
+        {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
+        {% assign image_src_medium = block.settings.image_tablet | image_url: width: 1024 %}
+        {% assign image_src_small = block.settings.image_mobile | image_url: width: 768 %}
+
+        {% unless image_src_large %}
+          {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
+        {% endunless %}
+
+        {% if image_src_medium == null %}
+          {% assign image_src_medium = image_src_large %}
+        {% endif %}
+
+        {% if image_src_small == null %}
+          {% assign image_src_small = image_src_large %}
+        {% endif %}
+
+        <div
+          class='embla__slide'
+          id='Slide-{{ section.id }}-{{ forloop.index }}'
+          role='group'
+          aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+          tabindex='-1'
         >
-        <div class='product-details'>
-          <h3>{{ block.settings.product_name }}</h3>
-          <p class='price'>{{ block.settings.product_price }}</p>
-          <p>{{ block.settings.product_description }}</p>
+          <div
+            class='tw-relative'
+            role='region'
+            aria-label='{{ block.settings.product_name | t }}'
+          >
+            <picture class='tw-block tw-absolute tw-h-full tw-w-full -tw-z-10'>
+              <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
+              <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
+              <img
+                src='{{ image_src_large }}'
+                alt='{{ block.settings.alt_text }}'
+                width='1440'
+                height='576'
+                class='tw-object-cover tw-w-full tw-h-full tw-absolute'
+              >
+            </picture>
+            <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-grid tw-grid-rows-[1fr_min-content_min-content]'>
+              {%- if block.settings.product_name != blank -%}
+                {%- if block.settings.product_url != blank -%}
+                  <a
+                    href='{{ block.settings.product_url }}'
+                    class='tw-no-underline tw-self-center'
+                  >
+                {%- endif -%}
+                <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem] lg:tw-w-fit lg:tw-mx-auto'>
+                  <span>{{ block.settings.product_name | escape }}</span>
+                </p>
+                {%- if block.settings.product_url != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+              <div class='tw-grid tw-place-content-center lg:tw-absolute lg:tw-top-[25%] lg:tw-right-[20%] lg:tw-justify-items-start'>
+                {% if block.settings.product_price != blank %}
+                  <p class='tw-font-league-spartan tw-text[18px] tw-text-white tw-font-bold tw-text-center tw-self-end tw-mb-3 '>
+                    {{ block.settings.product_price }}
+                  </p>
+                {% endif %}
+                <a
+                  href='{{block.settings.product_url}}'
+                  class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-white tw-self-end tw-w-fit tw-justify-self-center'
+                >
+                  <span class='tw-text-black tw-font-normal'>
+                    {{ block.settings.button_text }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {%- endfor -%}
+    </div>
+    <div class='swipe-suggest'>
+      {% render 'icon-swipe' %}
+    </div>
   </div>
 </div>

@@ -160,6 +160,18 @@
   </div>
 </div>
 
+<script>
+  const element = document.querySelector('.utility-bar');
+  const observer = new ResizeObserver(setElementHeight);
+
+  setElementHeight();
+  observer.observe(element);
+
+  function setElementHeight() {
+    document.documentElement.style.setProperty('--announcement-height', `${element.offsetHeight}px`);
+  }
+</script>
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
