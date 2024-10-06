@@ -249,6 +249,7 @@
         "product-2": {
           "type": "product-carousel-item",
           "settings": {
+            "image_desktop": "shopify://shop_images/1a7148bf0a2226634a45e61bddf77a7a.png",
             "product_name": "Senzo Elite SG2 Bunka 165mm",
             "product_price": "199,99 €",
             "product_description": "<p>Erleben Sie die ultimative Küchenleistung mit dem Senzo Elite SG2 Bunka 165mm. Entworfen für Köche, die bei jedem Schnitt nach Perfektion streben.</p>",
@@ -258,6 +259,7 @@
         "product-3": {
           "type": "product-carousel-item",
           "settings": {
+            "image_desktop": "shopify://shop_images/1a7148bf0a2226634a45e61bddf77a7a.png",
             "product_name": "Senzo SG2 Professionelles Bunka 165mm",
             "product_price": "199,99 €",
             "product_description": "<p>Das Senzo SG2 Professionelles Bunka 165mm bietet unvergleichliche Schärfe und Kantenhaltbarkeit und ist ein unverzichtbares Werkzeug für jeden kulinarischen Künstler.</p>",
@@ -267,6 +269,7 @@
         "product-4": {
           "type": "product-carousel-item",
           "settings": {
+            "image_desktop": "shopify://shop_images/1a7148bf0a2226634a45e61bddf77a7a.png",
             "product_name": "Senzo Supreme SG2 Bunka Messer 165mm",
             "product_price": "199,99 €",
             "product_description": "<p>Für den anspruchsvollen Koch entwickelt, kombiniert das Senzo Supreme SG2 Bunka Messer 165mm überlegene Schärfe mit einem eleganten Design für perfekte Ergebnisse jedes Mal.</p>",
