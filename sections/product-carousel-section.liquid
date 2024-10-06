@@ -75,22 +75,22 @@
           tabindex='-1'
         >
           <div
-            class='tw-relative'
+            class='tw-relative tw-py-[9rem] tw-grid tw-place-content-center'
             role='region'
-            aria-label='{{ block.settings.product_name | t }}'
+            aria-label='{{ block.settings.product_name }}'
           >
-            <picture class='tw-block tw-absolute tw-h-full tw-w-full -tw-z-10'>
+            <picture class='tw-block lg:tw-max-w-[90rem] lg:tw-min-h-[37.5rem]'>
               <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
               <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
               <img
                 src='{{ image_src_large }}'
                 alt='{{ block.settings.alt_text }}'
-                width='1440'
-                height='576'
-                class='tw-object-cover tw-w-full tw-h-full tw-absolute'
+                width='900'
+                height='375'
+                class=''
               >
             </picture>
-            <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-grid tw-grid-rows-[1fr_min-content_min-content]'>
+            <div class='tw-w-full tw-h-full tw-py-[2rem] tw-text-center tw-text-black'>
               {%- if block.settings.product_name != blank -%}
                 {%- if block.settings.product_url != blank -%}
                   <a
@@ -98,34 +98,30 @@
                     class='tw-no-underline tw-self-center'
                   >
                 {%- endif -%}
-                <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem] lg:tw-w-fit lg:tw-mx-auto'>
+                <p class='tw-font-semibold tw-text-[1.8rem] md:tw-text-[2.5rem]'>
                   <span>{{ block.settings.product_name | escape }}</span>
                 </p>
                 {%- if block.settings.product_url != blank -%}
                   </a>
                 {%- endif -%}
               {%- endif -%}
-              <div class='tw-grid tw-place-content-center lg:tw-absolute lg:tw-top-[25%] lg:tw-right-[20%] lg:tw-justify-items-start'>
-                {% if block.settings.product_price != blank %}
-                  <p class='tw-font-league-spartan tw-text[18px] tw-text-white tw-font-bold tw-text-center tw-self-end tw-mb-3 '>
-                    {{ block.settings.product_price }}
-                  </p>
-                {% endif %}
-                <a
-                  href='{{block.settings.product_url}}'
-                  class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-white tw-self-end tw-w-fit tw-justify-self-center'
-                >
-                  <span class='tw-text-black tw-font-normal'>
-                    {{ block.settings.button_text }}
-                  </span>
-                </a>
-              </div>
+              {% if block.settings.product_price != blank %}
+                <p class='tw-text[1.8rem] md:tw-text-[2.5rem] tw-font-semibold tw-my-[3rem]'>
+                  {{ block.settings.product_price }}
+                </p>
+              {% endif %}
+              <a
+                href='{{block.settings.product_url}}'
+                class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-[#D9D9D9]'
+              >
+                <span class='tw-text-black tw-font-normal tw-text-[1.8rem]'> Zum Messer </span>
+              </a>
             </div>
           </div>
         </div>
       {%- endfor -%}
     </div>
-    <div class='swipe-suggest'>
+    <div class='swipe-suggest swipe-suggest--crop-bottom-left tw-right-0 tw-top-0'>
       {% render 'icon-swipe' %}
     </div>
   </div>
