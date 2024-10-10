@@ -111,7 +111,7 @@
         {% if block.type == 'product-slider-tab' %}
           {% assign tab_id = block.settings['tab-id'] %}
           <div
-            class='tab-content swiper tw-pt-[4.6rem] lg:tw-pt-[8.6rem] tw-pb-[2.5rem] lg:tw-pb-0 tw-col-span-full tw-row-end-1 tw-flex tw-max-w-full tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
+            class='tab-content swiper tw-pt-24 lg:tw-pt-40 tw-pb-[2.5rem] lg:tw-pb-0 tw-col-span-full tw-row-end-1 tw-flex tw-max-w-full tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
             id='{{block.settings['tab-id']}}'
           >
             <div class='swiper-wrapper tw-max-w-full'>

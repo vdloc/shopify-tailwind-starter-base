@@ -26,14 +26,11 @@ function renderProductTabsSection() {
       520: {
         slidesPerView: 2,
         spaceBetween: 20,
+        centeredSlides: false,
       },
       992: {
         slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        spaceBetween: 43,
       },
     },
   };
@@ -75,24 +72,10 @@ function renderProductCarouselSection() {
   );
   const sliderContainer = productCarouselSection?.querySelector('.swiper');
   const sliderOptions = {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     centeredSlides: true,
     centeredSlidesBounds: true,
     spaceBetween: 15,
-    breakpoints: {
-      520: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-    },
   };
 
   if (sliderContainer) {
