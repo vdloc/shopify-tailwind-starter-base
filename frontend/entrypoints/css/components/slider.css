@@ -1,0 +1,12 @@
+.product-slider-tab-section {
+  .swiper {
+    &.swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal {
+      @apply tw-top-auto tw-bg-[#D9D9D9];
+
+      .swiper-pagination-progressbar-fill {
+        @apply tw-bg-black;
+      }
+    }
+  }
+}

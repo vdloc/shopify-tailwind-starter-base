@@ -1,11 +1,13 @@
 class Tabs {
   constructor({
-    containerSelector,
+    container,
     activeClass = [],
     tabSelector,
     tabContentSelector,
   }) {
-    this.container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    this.container = container;
     this.tabs = this.container.querySelectorAll(tabSelector);
     this.tabsContent = this.container.querySelectorAll(tabContentSelector);
     this.classes = {
@@ -16,9 +18,12 @@ class Tabs {
   }
   init() {
     this.onTabClick = this.onTabClick.bind(this);
-    this.tabs.forEach((tab) => {
-      tab.addEventListener('click', this.onTabClick);
-    });
+
+    if (this.tabs) {
+      this.tabs.forEach((tab) => {
+        tab.addEventListener('click', this.onTabClick);
+      });
+    }
   }
 
   onTabClick(event) {

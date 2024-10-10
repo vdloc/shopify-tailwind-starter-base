@@ -1,7 +1,6 @@
-@import './components/header.css';
-@import './components/slider.css';
-@import './components/hero.css';
-@import './components/product-tabs.css';
+@import '../components/slider.css';
+@import '../components/hero.css';
+@import '../components/product-tabs.css';
 
 @tailwind base;
 @tailwind components;

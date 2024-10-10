@@ -6,4 +6,5 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
   },
+  optimizeDeps: { exclude: ['swiper', 'swiper/types'] },
 });

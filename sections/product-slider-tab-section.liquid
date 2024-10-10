@@ -111,13 +111,13 @@
         {% if block.type == 'product-slider-tab' %}
           {% assign tab_id = block.settings['tab-id'] %}
           <div
-            class='tab-content embla tw-pt-[86px] tw-col-span-full tw-row-end-1 tw-flex tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
+            class='tab-content swiper tw-pt-[4.6rem] lg:tw-pt-[8.6rem] tw-pb-[2.5rem] lg:tw-pb-0 tw-col-span-full tw-row-end-1 tw-flex tw-max-w-full tw-transition-all tw-ease-in-out tw-duration-500 {% if tab_id != active_tab_id %}tw-opacity-0 tw-invisible -tw-z-10{% endif %}'
             id='{{block.settings['tab-id']}}'
           >
-            <div class='embla__container'>
+            <div class='swiper-wrapper tw-max-w-full'>
               {% for block in section.blocks %}
                 {% if block.type == 'product-slider-item' and block.settings['tab-id'] == tab_id %}
-                  <div class='product-slider-item embla__slide'>
+                  <div class='product-slider-item swiper-slide tw-max-w-[85%] sm:tw-max-w-default'>
                     {% if block.settings.product_image %}
                       {% assign image_src = block.settings.product_image | image_url: '400x300' %}
                     {% else %}
@@ -133,27 +133,32 @@
                       >
                     </a>
 
-                    <h4 class='tw-mt-[90px] tw-font-league-spartan tw-text-[20px] tw-font-bold'>
+                    <h4 class='tw-mt-[3rem] lg:tw-mt-[9rem] tw-font-league-spartan tw-text-[1.8rem] lg:tw-text-[2rem] tw-font-bold'>
                       <a href='{{block.settings.product_link}}' title='{{block.settings.product_name}}'>
                         {{ block.settings.product_name }}
                       </a>
                     </h4>
                     <div class='tw-flex tw-gap-[2rem]'>
                       {% if block.settings.new_price != '' %}
-                        <p class='tw-text-[18px] tw-font-bold tw-mt-[2rem] tw-text-[#52A634]'>
+                        <p class='tw-text-[1.6rem] lg:tw-text-[1.8rem] tw-font-bold tw-mt-[2rem] tw-text-[#52A634]'>
                           {{ block.settings.new_price }}
                         </p>
                       {% endif %}
-                      <p class='tw-text-[18px] tw-text-black tw-font-bold tw-mt-[2rem] tw-relative {% if block.settings.new_price != '' %}after:tw-block after:tw-w-2/3 after:tw-h-[1px] after:tw-absolute after:tw-top-1/3 after:tw-bg-black after:tw-rotate-12 {% endif %}'>
+                      <p class='tw-text-[1.6rem] lg:tw-text-[1.8rem] tw-text-black tw-font-bold tw-mt-[2rem] tw-relative {% if block.settings.new_price != '' %}after:tw-block after:tw-w-2/3 after:tw-h-[1px] after:tw-absolute after:tw-top-1/3 after:tw-bg-black after:tw-rotate-12 {% endif %}'>
                         {{ block.settings.product_price }}
                       </p>
                     </div>
-                    <p class='tw-text-[1.8rem] tw-leading-tight tw-mt-[1.6rem]'>
+                    <p class='tw-text-[1.6rem] lg:tw-text-[1.8rem] tw-leading-tight tw-mt-[1.6rem]'>
                       {{ block.settings.product_description }}
                     </p>
                   </div>
                 {% endif %}
               {% endfor %}
+            </div>
+            <div class='swiper-pagination md:tw-hidden tw-bottom-0 tw-top-auto'></div>
+            <div class='tw-hidden md:tw-block'>
+              <div class='swiper-button-prev'></div>
+              <div class='swiper-button-next'></div>
             </div>
           </div>
         {% endif %}
@@ -164,4 +169,3 @@
     <img src='{{ 'totem.png' | asset_url}}' width='800' height='800' class='tw-absolute '>
   </div>
 </section>
-

@@ -16,13 +16,14 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: '1.5rem',
-          sm: '1.5rem',
+          xs: '1.5rem',
           md: '2rem',
           lg: '4rem',
           xl: '5rem',
           '2xl': '6.5rem',
         },
         screens: {
+          xs: '100%',
           sm: '100%',
           md: '100%',
           lg: '800px', // Custom width for large screens
@@ -34,7 +35,8 @@ module.exports = {
     },
   },
   screens: {
-    sm: '320px',
+    xs: '320px',
+    sm: '520px',
     md: '750px',
     lg: '990px',
     xlg: '1440px',

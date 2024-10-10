@@ -48,8 +48,8 @@
 {% endschema %}
 
 <div class='product-carousel-section'>
-  <div class='embla tw-relative'>
-    <div class='embla__container'>
+  <div class='swiper tw-relative tw-container'>
+    <div class='swiper-wrapper tw-max-w-full'>
       {%- for block in section.blocks -%}
         {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
         {% assign image_src_medium = block.settings.image_tablet | image_url: width: 1024 %}
@@ -68,7 +68,7 @@
         {% endif %}
 
         <div
-          class='embla__slide'
+          class='swiper-slide'
           id='Slide-{{ section.id }}-{{ forloop.index }}'
           role='group'
           aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
@@ -90,7 +90,7 @@
                 class=''
               >
             </picture>
-            <div class='tw-w-full tw-h-full tw-py-[2rem] tw-text-center tw-text-black'>
+            <div class='tw-w-full tw-h-full tw-py-[2rem] tw-text-left md:tw-text-center tw-text-black'>
               {%- if block.settings.product_name != blank -%}
                 {%- if block.settings.product_url != blank -%}
                   <a
@@ -106,13 +106,13 @@
                 {%- endif -%}
               {%- endif -%}
               {% if block.settings.product_price != blank %}
-                <p class='tw-text[1.8rem] md:tw-text-[2.5rem] tw-font-semibold tw-my-[3rem]'>
+                <p class='tw-text[1.6rem] md:tw-text-[2.5rem] tw-font-semibold tw-my-[3rem]'>
                   {{ block.settings.product_price }}
                 </p>
               {% endif %}
               <a
                 href='{{block.settings.product_url}}'
-                class='shop-button tw-py-[12px] tw-ps-[18px] tw-pe-[30px] tw-bg-[#D9D9D9]'
+                class='shop-button tw-py-[1.2rem] tw-ps-[1.8rem] tw-pe-[3rem] tw-bg-[#D9D9D9]'
               >
                 <span class='tw-text-black tw-font-normal tw-text-[1.8rem]'> Zum Messer </span>
               </a>
