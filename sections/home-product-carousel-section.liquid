@@ -1,54 +1,5 @@
-{% schema %}
-{
-  "name": "Product Carousel Section",
-  "blocks": [
-    {
-      "type": "product-carousel-item",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image_desktop",
-          "label": "Product Image Desktop"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_tablet",
-          "label": "Product Image Tablet"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_mobile",
-          "label": "Product Image Mobile"
-        },
-        {
-          "type": "text",
-          "id": "product_name",
-          "label": "Product Name"
-        },
-        {
-          "type": "text",
-          "id": "product_price",
-          "label": "Product Price"
-        },
-        {
-          "type": "richtext",
-          "id": "product_description",
-          "label": "Product Description"
-        },
-        {
-          "type": "url",
-          "id": "product_url",
-          "label": "Product URL"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
-
-<div class='product-carousel-section'>
-  <div class='swiper tw-relative tw-container'>
+<div class='product-carousel-section tw-relative'>
+  <div class='swiper  tw-container'>
     <div class='swiper-wrapper tw-max-w-full'>
       {%- for block in section.blocks -%}
         {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
@@ -126,3 +77,52 @@
     </div>
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Product Carousel Section",
+  "blocks": [
+    {
+      "type": "product-carousel-item",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Product Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Product Image Tablet"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Product Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price"
+        },
+        {
+          "type": "richtext",
+          "id": "product_description",
+          "label": "Product Description"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

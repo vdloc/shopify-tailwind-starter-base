@@ -1,0 +1,44 @@
+{% schema %}
+{
+  "name": "Prdduct Detail Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product Detail Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ]
+}
+{% endschema %}
+
+<section class='tw-bg-[#D9D9D9] '>
+  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap tw-gap-[3rem]  '>
+    <figure class='tw-relative md:tw-max-w-[5.3rem]'>
+      {% assign image_src = section.settings.image | image_url: width: 500 %}
+      <img
+        src='{{ image_src }}'
+        alt='{{ section.settings.title }}'
+        width='500'
+        height='500'
+        class='tw-block  md:tw-absolute -tw-bottom-[9rem]  tw-object-cover'
+      >
+    </figure>
+
+    <section class='tw-flex-1 md:tw-w-3/5 tw-pt-[7rem] md:tw-py-[9rem] tw-px-[7rem]'>
+      <h4 class='tw-text-[2rem] md:tw-text-[2.5rem] tw-font-bold'>{{ section.settings.title }}</h4>
+      <p class='tw-text-[1.6rem] md:tw-text-[1.8rem] tw-leading-tight tw-mt-[4rem]'>
+        {{ section.settings.description }}
+      </p>
+    </section>
+  </div>
+</section>

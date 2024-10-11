@@ -1,7 +1,7 @@
 {
   "sections": {
     "hero-section": {
-      "type": "hero-section",
+      "type": "home-hero-section",
       "blocks": {
         "slide-1": {
           "type": "hero-section-item",
@@ -58,7 +58,7 @@
       }
     },
     "product-slider-tab-section": {
-      "type": "product-slider-tab-section",
+      "type": "home-product-slider-tab-section",
       "blocks": {
         "tab-1": {
           "type": "product-slider-tab",
@@ -217,7 +217,7 @@
       }
     },
     "about-section": {
-      "type": "about-section",
+      "type": "home-about-section",
       "settings": {
         "image": "shopify:\/\/shop_images\/06ec8a5d42302511a3e3c6474dcfe3f5.png",
         "title": "Ein Blick hinter Sharped Messer",
@@ -225,7 +225,7 @@
       }
     },
     "product-carousel-section": {
-      "type": "product-carousel-section",
+      "type": "home-product-carousel-section",
       "blocks": {
         "product-1": {
           "type": "product-carousel-item",
@@ -280,6 +280,13 @@
     "home-assets": {
       "type": "home-assets",
       "settings": {
+      }
+    },
+    "product-description-section": {
+      "type": "home-product-description-section",
+      "settings": {
+        "title": "Senzo Professional SG2 Bunka 165mm",
+        "description": "High quality SG2 Bunka knife for precise cuts."
       }
     }
   },

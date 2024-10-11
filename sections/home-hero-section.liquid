@@ -1,0 +1,148 @@
+<section class='hero-section'>
+  <div class='swiper tw-relative'>
+    <div class='swiper-wrapper'>
+      {%- for block in section.blocks -%}
+        {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
+        {% assign image_src_medium = block.settings.image_tablet | image_url: width: 1024 %}
+        {% assign image_src_small = block.settings.image_mobile | image_url: width: 768 %}
+
+        {% unless image_src_large %}
+          {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
+        {% endunless %}
+
+        {% if image_src_medium == null %}
+          {% assign image_src_medium = image_src_large %}
+        {% endif %}
+
+        {% if image_src_small == null %}
+          {% assign image_src_small = image_src_large %}
+        {% endif %}
+
+        <div
+          class='swiper-slide'
+          id='Slide-{{ section.id }}-{{ forloop.index }}'
+          role='group'
+          aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+          tabindex='-1'
+        >
+          <div
+            class='tw-relative hero-banner'
+            role='region'
+            aria-label='{{ block.settings.text | t }}'
+          >
+            <picture class='tw-block tw-absolute tw-h-full tw-w-full -tw-z-10'>
+              <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
+              <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
+              <img
+                src='{{ image_src_large }}'
+                alt='{{ block.settings.alt_text }}'
+                width='1440'
+                height='576'
+                class='tw-object-cover tw-w-full tw-h-full tw-absolute'
+              >
+            </picture>
+            <div class='tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-py-[2rem] tw-hidden md:tw-grid'>
+              {%- if block.settings.text != blank -%}
+                <div class='tw-self-end tw-mb-[6.6rem]'>
+                  {%- if block.settings.link != blank -%}
+                    <a
+                      href='{{ block.settings.link }}'
+                      class='tw-no-underline tw-self-center'
+                    >
+                  {%- endif -%}
+                  <p class='tw-font-league-spartan tw-font-normal tw-text-white tw-text-[18px] md:tw-text-[24px] tw-bg-[rgba(0,0,0,0.20)] tw-text-center tw-p-[1.6rem] lg:tw-w-fit lg:tw-mx-auto'>
+                    <span>{{ block.settings.text | escape }}</span>
+                  </p>
+                  {%- if block.settings.link != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class='swipe-suggest swipe-suggest--crop-top-right tw-bottom-0 tw-left-0 tw-z-10'>
+      {% render 'icon-swipe' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WILLKOMMEN BEI SHARPED MESSER"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-section-item",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Slide Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Slide Image Tablet"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Slide Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alternative Text",
+          "default": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "default": "80,- €"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Slide Text",
+          "default": "Slide Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Zum Messer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

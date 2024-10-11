@@ -1,0 +1,122 @@
+<div class='product-carousel-section tw-relative'>
+  <div class='swiper  tw-container'>
+    <div class='swiper-wrapper tw-max-w-full'>
+      {%- for block in section.blocks -%}
+        {% assign image_src_large = block.settings.image_desktop | image_url: height: 579 %}
+        {% assign image_src_medium = block.settings.image_tablet | image_url: width: 1024 %}
+        {% assign image_src_small = block.settings.image_mobile | image_url: width: 768 %}
+
+        {% unless image_src_large %}
+          {% assign image_src_large = 'Jonathan.jpg' | asset_url %}
+        {% endunless %}
+
+        {% if image_src_medium == null %}
+          {% assign image_src_medium = image_src_large %}
+        {% endif %}
+
+        {% if image_src_small == null %}
+          {% assign image_src_small = image_src_large %}
+        {% endif %}
+
+        <div
+          class='swiper-slide'
+          id='Slide-{{ section.id }}-{{ forloop.index }}'
+          role='group'
+          aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+          tabindex='-1'
+        >
+          <div
+            class='tw-relative tw-py-[9rem] tw-grid tw-place-content-center'
+            role='region'
+            aria-label='{{ block.settings.product_name }}'
+          >
+            <picture class='tw-block lg:tw-max-w-[90rem] lg:tw-min-h-[37.5rem]'>
+              <source srcset='{{ image_src_small }}' media='(max-width: 768px)'>
+              <source srcset='{{ image_src_medium }}' media='(max-width: 1024px)'>
+              <img
+                src='{{ image_src_large }}'
+                alt='{{ block.settings.alt_text }}'
+                width='900'
+                height='375'
+                class=''
+              >
+            </picture>
+            <div class='tw-w-full tw-h-full tw-py-[2rem] tw-text-left md:tw-text-center tw-text-black'>
+              {%- if block.settings.product_name != blank -%}
+                {%- if block.settings.product_url != blank -%}
+                  <a
+                    href='{{ block.settings.product_url }}'
+                    class='tw-no-underline tw-self-center'
+                  >
+                {%- endif -%}
+                <p class='tw-font-semibold tw-text-[1.8rem] md:tw-text-[2.5rem]'>
+                  <span>{{ block.settings.product_name | escape }}</span>
+                </p>
+                {%- if block.settings.product_url != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+              {% if block.settings.product_price != blank %}
+                <p class='tw-text[1.6rem] md:tw-text-[2.5rem] tw-font-semibold tw-my-[3rem]'>
+                  {{ block.settings.product_price }}
+                </p>
+              {% endif %}
+              <a
+                href='{{block.settings.product_url}}'
+                class='shop-button tw-py-[1.2rem] tw-ps-[1.8rem] tw-pe-[3rem] tw-bg-[#D9D9D9]'
+              >
+                <span class='tw-text-black tw-font-normal tw-text-[1.8rem]'> Zum Messer </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class='swipe-suggest swipe-suggest--crop-bottom-left tw-right-0 tw-top-0'>
+      {% render 'icon-swipe' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials Section",
+  "blocks": [
+    {
+      "type": "testimonial-item",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Rating"
+        },
+        {
+          "type": "textarea",
+          "id": "comment",
+          "label": "comment"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Buy Date"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

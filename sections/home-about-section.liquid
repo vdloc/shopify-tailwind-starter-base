@@ -1,0 +1,41 @@
+{% schema %}
+{
+  "name": "About Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "About Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ]
+}
+{% endschema %}
+
+<section class='tw-bg-[#D9D9D9] tw-pt-[7rem] md:tw-py-[9rem] '>
+  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap tw-gap-[3rem]'>
+    <section class='md:tw-max-w-[75rem] md:tw-w-3/5'>
+      <h4 class='tw-text-[2rem] md:tw-text-[2.5rem] tw-font-bold'>{{ section.settings.title }}</h4>
+      <p class='tw-text-[1.6rem] md:tw-text-[1.8rem] tw-leading-tight tw-mt-[3rem]'>{{ section.settings.content }}</p>
+    </section>
+    <figure class='tw-flex-1 tw-relative'>
+      {% assign image_src = section.settings.image | image_url: width: 500 %}
+      <img
+        src='{{ image_src }}'
+        alt='{{ section.settings.title }}'
+        width='500'
+        height='500'
+        class='tw-block  md:tw-absolute -tw-bottom-[9rem]  tw-object-cover'
+      >
+    </figure>
+  </div>
+</section>
