@@ -296,6 +296,70 @@
     },
     "testimonials-section": {
       "type": "home-testimonials-section",
+      "blocks": {
+        "testimonial_item_9bgDrE": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "It’s the business end of the chef knife, the part that does the real work. The core steel of your knife, or the cutting edge, is one of the. Japanese chef knives need a little more care than your regular off the shelf knives. But don’t be afraid, looking after them is easier",
+            "date": "04.06.2024",
+            "customer_name": "Sasmaas"
+          }
+        },
+        "testimonial_item_JWMQ68": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "",
+            "date": "",
+            "customer_name": ""
+          }
+        },
+        "testimonial_item_jrjpKM": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "",
+            "date": "",
+            "customer_name": ""
+          }
+        },
+        "testimonial_item_t8HkFm": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "",
+            "date": "",
+            "customer_name": ""
+          }
+        },
+        "testimonial_item_xjg7c3": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "",
+            "date": "",
+            "customer_name": ""
+          }
+        },
+        "testimonial_item_cw8FNR": {
+          "type": "testimonial-item",
+          "settings": {
+            "rating": 4,
+            "comment": "",
+            "date": "",
+            "customer_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_item_9bgDrE",
+        "testimonial_item_JWMQ68",
+        "testimonial_item_jrjpKM",
+        "testimonial_item_t8HkFm",
+        "testimonial_item_xjg7c3",
+        "testimonial_item_cw8FNR"
+      ],
       "settings": {
       }
     },
