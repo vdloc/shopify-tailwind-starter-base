@@ -22,15 +22,15 @@
 {% endschema %}
 
 <section class='tw-bg-[#D9D9D9] '>
-  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap tw-gap-[3rem]  '>
-    <figure class='tw-relative md:tw-max-w-[5.3rem]'>
+  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap tw-gap-[3rem]'>
+    <figure class='tw-relative md:tw-w-[53rem]'>
       {% assign image_src = section.settings.image | image_url: width: 500 %}
       <img
         src='{{ image_src }}'
         alt='{{ section.settings.title }}'
         width='500'
         height='500'
-        class='tw-block  md:tw-absolute -tw-bottom-[9rem]  tw-object-cover'
+        class='tw-block tw-object-cover tw-absolute tw-h-full'
       >
     </figure>
 
