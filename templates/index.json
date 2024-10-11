@@ -283,11 +283,10 @@
       }
     },
     "product-description-section": {
-      "type": "home-product-description-section",
-      "settings": {
-        "title": "Senzo Professional SG2 Bunka 165mm",
-        "description": "High quality SG2 Bunka knife for precise cuts."
-      }
+      "type": "home-product-description-section",    
+    },
+    "testimonials-section": {
+      "type": "home-testimonials-section",    
     }
   },
   "order": [
@@ -295,6 +294,8 @@
     "product-slider-tab-section",
     "about-section",
     "product-carousel-section",
+    "product-description-section",
+    "testimonials-section",
     "home-assets"
   ]
 }
