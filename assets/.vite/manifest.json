@@ -1,0 +1,57 @@
+{
+  "frontend/entrypoints/css/components/header.css": {
+    "file": "header-Cb0hGY_6.css",
+    "src": "frontend/entrypoints/css/components/header.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/css/components/hero.css": {
+    "file": "hero-2mGwULgN.css",
+    "src": "frontend/entrypoints/css/components/hero.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/css/components/product-tabs.css": {
+    "file": "product-tabs-umnK3ycb.css",
+    "src": "frontend/entrypoints/css/components/product-tabs.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/css/components/slider.css": {
+    "file": "slider-LLVCSCis.css",
+    "src": "frontend/entrypoints/css/components/slider.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/css/global.css": {
+    "file": "global-DPxQNYom.css",
+    "src": "frontend/entrypoints/css/global.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/css/pages/home.css": {
+    "file": "home-DcoxboCO.css",
+    "src": "frontend/entrypoints/css/pages/home.css",
+    "isEntry": true
+  },
+  "frontend/entrypoints/js/components/slider.js": {
+    "file": "slider-01Z2Rk7D.js",
+    "name": "slider",
+    "src": "frontend/entrypoints/js/components/slider.js",
+    "isEntry": true,
+    "css": [
+      "slider-D8hpCEjB.css"
+    ]
+  },
+  "frontend/entrypoints/js/components/tabs.js": {
+    "file": "tabs-K9tH8dLm.js",
+    "name": "tabs",
+    "src": "frontend/entrypoints/js/components/tabs.js",
+    "isEntry": true
+  },
+  "frontend/entrypoints/js/pages/home.js": {
+    "file": "home-Bg-5wJ1K.js",
+    "name": "home",
+    "src": "frontend/entrypoints/js/pages/home.js",
+    "isEntry": true,
+    "imports": [
+      "frontend/entrypoints/js/components/slider.js",
+      "frontend/entrypoints/js/components/tabs.js"
+    ]
+  }
+}
