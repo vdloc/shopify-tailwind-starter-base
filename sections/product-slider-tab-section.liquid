@@ -1,3 +1,87 @@
+{% schema %}
+{
+  "name": "Product Tab Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WILLKOMMEN BEI SHARPED MESSER"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-slider-tab",
+      "name": "Product Slider Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "EINZELMESSER"
+        },
+        {
+          "type": "text",
+          "id": "tab-id",
+          "label": "Tab ID",
+          "default": "einzelmesser"
+        }
+      ]
+    },
+    {
+      "type": "product-slider-item",
+      "name": "Product Slider Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name",
+          "default": "Senzo Professional SG2 Bunka 165mm"
+        },
+        {
+          "type": "text",
+          "id": "product_link",
+          "label": "Product Link",
+          "default": "/"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "default": "55,00 €"
+        },
+        {
+          "type": "text",
+          "id": "new_price",
+          "label": "New Product Price"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description",
+          "label": "Product Description",
+          "default": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "tab-id",
+          "label": "Tab ID"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
 <section class='product-slider-tab-section tw-relative'>
   <div class=' tw-container tw-py-[7.5rem] md:tw-py-[9rem] tw-relative'>
     <header class='tw-text-center tw-font-worksans'>
@@ -85,88 +169,3 @@
     <img src='{{ 'totem.png' | asset_url}}' width='800' height='800' class='tw-absolute '>
   </div>
 </section>
-
-{% schema %}
-{
-  "name": "Product Tab Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "WILLKOMMEN BEI SHARPED MESSER"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Ihr Zuhause für ultra scharfes Messer aus Carbon Stahl"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product-slider-tab",
-      "name": "Product Slider Tab",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Tab Title",
-          "default": "EINZELMESSER"
-        },
-        {
-          "type": "text",
-          "id": "tab-id",
-          "label": "Tab ID",
-          "default": "einzelmesser"
-        }
-      ]
-    },
-    {
-      "type": "product-slider-item",
-      "name": "Product Slider Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "product_name",
-          "label": "Product Name",
-          "default": "Senzo Professional SG2 Bunka 165mm"
-        },
-        {
-          "type": "text",
-          "id": "product_link",
-          "label": "Product Link",
-          "default": "/"
-        },
-        {
-          "type": "text",
-          "id": "product_price",
-          "label": "Product Price",
-          "default": "55,00 €"
-        },
-        {
-          "type": "text",
-          "id": "new_price",
-          "label": "New Product Price"
-        },
-        {
-          "type": "textarea",
-          "id": "product_description",
-          "label": "Product Description",
-          "default": "Messertasche schwarzes Leder Messertasche schwarzes Leder"
-        },
-        {
-          "type": "image_picker",
-          "id": "product_image",
-          "label": "Product Image"
-        },
-        {
-          "type": "text",
-          "id": "tab-id",
-          "label": "Tab ID"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}

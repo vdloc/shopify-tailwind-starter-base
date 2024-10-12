@@ -90,6 +90,56 @@ function renderProductCarouselSection() {
   }
 }
 
+function renderTestimonialSection() {
+  const testimonialSection = document.querySelector('.testimonials-section');
+  const coverTexts = testimonialSection?.querySelectorAll('.cover-text');
+  const sliderContainer = testimonialSection?.querySelector('.swiper');
+  const sliderOptions = {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    breakpoints: {
+      520: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 43,
+      },
+    },
+    autoHeight: true,
+  };
+
+  if (sliderContainer) {
+    const slider = new Slider({
+      container: sliderContainer,
+      options: {
+        ...sliderOptions,
+        pagination: {
+          el: sliderContainer.querySelector('.swiper-pagination'),
+          type: 'progressbar',
+        },
+        navigation: {
+          nextEl: sliderContainer.querySelector('.swiper-button-next'),
+          prevEl: sliderContainer.querySelector('.swiper-button-prev'),
+        },
+      },
+    });
+
+    slider.init();
+  }
+
+  coverTexts.forEach((coverText) => {
+    const content = coverText.textContent;
+    coverText.textContent = content
+      .trim()
+      .replace(/^(\w)(.+)/g, (_, p1, p2) => {
+        return `${p1}${[...p2].map((char) => '*').join('')}`;
+      });
+  });
+}
+
 renderHeroSection();
 renderProductTabsSection();
 renderProductCarouselSection();
+renderTestimonialSection();

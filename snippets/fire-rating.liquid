@@ -1,0 +1,17 @@
+{% comment %}
+  Render rating fire icons
+  Accepts:
+  - rating: {Number} rating.
+  Usage:
+  {% render 'fire-rating', rating:number %}
+{% endcomment %}
+
+<ul class='tw-flex tw-flex-nowrap tw-justify-center'>
+  {%- for icon in (1..rating) -%}
+    <li>
+      <span>
+        {% render 'icon-fire' %}
+      </span>
+    </li>
+  {%- endfor -%}
+</ul>
