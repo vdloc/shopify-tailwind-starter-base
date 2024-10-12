@@ -18,8 +18,8 @@ module.exports = {
           DEFAULT: '1.5rem',
           xs: '1.5rem',
           md: '2rem',
-          lg: '4rem',
-          xl: '5rem',
+          lg: '3rem',
+          xl: '4rem',
           '2xl': '6.5rem',
         },
         screens: {

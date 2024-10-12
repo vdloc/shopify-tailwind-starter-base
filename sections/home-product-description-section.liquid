@@ -22,19 +22,29 @@
 {% endschema %}
 
 <section class='tw-bg-[#D9D9D9] '>
-  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap'>
-    <figure class='tw-relative md:tw-w-[53rem]'>
+  <figure class='tw-relative tw-w-full lg:tw-hidden'>
+    {% assign image_src = section.settings.image | image_url: width: 500 %}
+    <img
+      src='{{ image_src }}'
+      alt='{{ section.settings.title }}'
+      width='500'
+      height='500'
+      class='tw-block tw-object-cover tw-aspect-[390/440] sm:tw-aspect-auto tw-w-full tw-max-h-[40rem] lg:tw-absolute lg:tw-h-full'
+    >
+  </figure>
+  <div class='tw-container tw-flex tw-flex-wrap md:tw-flex-nowrap md:tw-gap-[4rem]'>
+    <figure class='tw-relative tw-w-full md:tw-w-1/3 xl:tw-w-[53rem] tw-hidden lg:tw-block'>
       {% assign image_src = section.settings.image | image_url: width: 500 %}
       <img
         src='{{ image_src }}'
         alt='{{ section.settings.title }}'
         width='500'
         height='500'
-        class='tw-block tw-object-cover tw-absolute tw-h-full'
+        class='tw-block tw-object-cover tw-aspect-[390/440] lg:tw-absolute lg:tw-h-full'
       >
     </figure>
 
-    <section class='tw-flex-1 md:tw-w-3/5 tw-pt-[7rem] md:tw-py-[9rem] tw-px-[7rem]'>
+    <section class='tw-flex-1 md:tw-w-3/5 tw-pt-[3rem] tw-pb-[7.5rem] xl:tw-pt-[7rem] xl:tw-py-[9rem] xl:tw-px-[7rem]'>
       <h4 class='tw-text-[2rem] md:tw-text-[2.5rem] tw-font-bold'>{{ section.settings.title }}</h4>
       <p class='tw-text-[1.6rem] md:tw-text-[1.8rem] tw-leading-tight tw-mt-[4rem]'>
         {{ section.settings.description }}
