@@ -1,0 +1,36 @@
+.product-slider-tab-section
+  .swiper.swiper-horizontal
+  > .swiper-pagination-progressbar,
+.product-slider-tab-section
+  .swiper
+  .swiper-pagination-progressbar.swiper-pagination-horizontal,
+.testimonials-section
+  .swiper.swiper-horizontal
+  > .swiper-pagination-progressbar,
+.testimonials-section
+  .swiper
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+  top: auto;
+  left: auto;
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+.product-slider-tab-section
+  .swiper.swiper-horizontal
+  > .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill,
+.product-slider-tab-section
+  .swiper
+  .swiper-pagination-progressbar.swiper-pagination-horizontal
+  .swiper-pagination-progressbar-fill,
+.testimonials-section
+  .swiper.swiper-horizontal
+  > .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill,
+.testimonials-section
+  .swiper
+  .swiper-pagination-progressbar.swiper-pagination-horizontal
+  .swiper-pagination-progressbar-fill {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
