@@ -12,6 +12,10 @@
     font-family: 'Work Sans', sans-serif;
     @apply tw-font-light;
   }
+
+  .swiper-slider {
+    @apply tw-mx-auto tw-relative tw-overflow-hidden tw-list-none tw-z-10 tw-block;
+  }
 }
 
 @layer utilities {

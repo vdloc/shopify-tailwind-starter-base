@@ -1,5 +1,4 @@
 import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
 class Slider {
   constructor({ container, options = {} }) {
     this.container = container;

@@ -45,7 +45,7 @@ function renderProductTabsSection() {
 
     productsTabs.tabsContent.forEach((tabContent) => {
       const slider = new Slider({
-        container: tabContent,
+        container: tabContent.querySelector('.swiper'),
         options: {
           ...sliderOptions,
           pagination: {
