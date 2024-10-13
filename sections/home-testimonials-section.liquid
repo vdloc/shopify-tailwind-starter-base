@@ -1,36 +1,46 @@
-<div class='testimonials-section tw-py-[7.5rem]'>
-  <div class='swiper tw-container tw-relative'>
-    <div class='swiper-wrapper tw-max-w-full'>
-      {%- for block in section.blocks -%}
-        <article
-          class='swiper-slide text-[1.6rem] md:text-[1.8rem] tw-space-y-[3rem] tw-font-normal'
-          id='Slide-{{ section.id }}-{{ forloop.index }}'
-          role='group'
-          aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
-          tabindex='-1'
-        >
-          <div class='flex tw-justify-center'>
-            {% render 'fire-rating', rating: block.settings.rating %}
-          </div>
-          <span class='tw-block'>
-            {{ block.settings.comment }}
-          </span>
-          <span class='tw-block py-[3rem]'> Gekauft am {{ block.settings.date }} </span>
-          <span class='tw-block cover-text'>
-            {{ block.settings.customer_name }}
-          </span>
-        </article>
-      {%- endfor -%}
+<section class='testimonials-section tw-py-[7.5rem] tw-relative'>
+  <div class='tw-container tw-relative'>
+    <div class='swiper'>
+      <div class='swiper-wrapper tw-max-w-full'>
+        {%- for block in section.blocks -%}
+          <article
+            class='swiper-slide tw-min-h-full text-[1.6rem] md:text-[1.8rem] tw-space-y-[3rem] tw-font-normal'
+            id='Slide-{{ section.id }}-{{ forloop.index }}'
+            role='group'
+            aria-label='{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}'
+            tabindex='-1'
+          >
+            <div class='flex tw-justify-center'>
+              {% render 'fire-rating', rating: block.settings.rating %}
+            </div>
+            <span class='tw-block'>
+              {{ block.settings.comment }}
+            </span>
+            <span class='tw-block py-[3rem]'> Gekauft am {{ block.settings.date }} </span>
+            <span class='tw-block cover-text'>
+              {{ block.settings.customer_name }}
+            </span>
+          </article>
+        {%- endfor -%}
+      </div>
+      <aside
+        class='swiper-pagination md:tw-hidden tw-static tw-mt-[3rem]'
+      ></aside>
     </div>
-    <div
-      class='swiper-pagination md:tw-hidden tw-static tw-mt-[3rem]'
-    ></div>
-    <div class='tw-hidden md:tw-block'>
-      <div class='swiper-button-prev'></div>
-      <div class='swiper-button-next'></div>
-    </div>
+
+    <aside class='tw-hidden lg:tw-flex tw-justify-between tw-absolute tw-top-1/2 -tw-translate-y-1/2 tw-left-1/2 -tw-translate-x-1/2 tw-w-full tw-select-none tw-z-50'>
+      <div class='swiper-button-prev tw-block after:tw-content-none tw-relative -tw-left-10'>
+        {% render 'icon-chevron', direction: 'left' %}
+      </div>
+      <div class='swiper-button-next tw-block after:tw-content-none tw-relative -tw-right-10'>
+        {% render 'icon-chevron', direction: 'right' %}
+      </div>
+    </aside>
   </div>
-</div>
+  <div class='tw-absolute tw-opacity-60 tw-top-auto -tw-bottom-[10rem] lg:tw-bottom-0 tw-translate-y-1/2 tw-rotate-180 tw-scale-[1.8] lg:tw-scale-100 tw-left-0 tw-opacity-60 tw-w-1/2 md:tw-w-[40rem] tw-aspect-[1/2] tw-overflow-hidden tw-pointer-events-none -tw-z-10'>
+    <img src='{{ 'totem.png' | asset_url}}' width='800' height='800' class='tw-absolute '>
+  </div>
+</section>
 
 {% schema %}
 {

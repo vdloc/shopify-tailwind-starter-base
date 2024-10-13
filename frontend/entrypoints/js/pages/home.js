@@ -83,6 +83,10 @@ function renderProductCarouselSection() {
       container: sliderContainer,
       options: {
         ...sliderOptions,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
     });
 
@@ -107,7 +111,6 @@ function renderTestimonialSection() {
         spaceBetween: 43,
       },
     },
-    autoHeight: true,
   };
 
   if (sliderContainer) {
@@ -116,12 +119,12 @@ function renderTestimonialSection() {
       options: {
         ...sliderOptions,
         pagination: {
-          el: sliderContainer.querySelector('.swiper-pagination'),
+          el: testimonialSection.querySelector('.swiper-pagination'),
           type: 'progressbar',
         },
         navigation: {
-          nextEl: sliderContainer.querySelector('.swiper-button-next'),
-          prevEl: sliderContainer.querySelector('.swiper-button-prev'),
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       },
     });
